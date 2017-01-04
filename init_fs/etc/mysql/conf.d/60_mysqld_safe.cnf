@@ -1,0 +1,5 @@
+[mysqld_safe]
+open-files-limit = 8192
+skip_log_error
+syslog
+

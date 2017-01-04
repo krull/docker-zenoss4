@@ -1,0 +1,6 @@
+.env
+.env_make
+*.log
+docker-compose.yml
+Dockerfile
+Makefile
