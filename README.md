@@ -1,7 +1,7 @@
 # docker-zenoss4
 `docker-zenoss4` is a dockerized, Debian 7 based, image for [Zenoss Core v4.2.5](http://wiki.zenoss.org/Install_Zenoss#Zenoss_Core_4.2.5), based on [Hydruid's core-autodeploy for Ubuntu/Debian](https://github.com/hydruid/zenoss/), with alterations, enhancements and security improvements in accordance to Docker's ephemeral ecosystem. Hydruid's work was based on OS Virtualization/Bare-metal installs, and for its time was sufficient for the task.
 
-## Description
+## description
 In continuing my journey to learn Docker's Best Practices, I had the need to dockerize the Battle-tested, Zenoss 4.2.5. This time around, I knew that Zenoss4 has dependencies on other processes to work properly at 100%. So in true, docker spirit, I have segregated all the major services that comprises the Zenoss4 Stack into its own dockerized images, utilizing docker's default image library for the following:
 
 * [mariadb](https://hub.docker.com/_/mariadb/) - `mariadb` 5.5 Database based instead of `mysql` 5.5
@@ -16,14 +16,36 @@ The [Dockerfile](https://github.com/krull/docker-zenoss4/Dockerfile) for the `ze
 
 Default zenoss logins: `admin`/`zenoss`
 
-For the automated build go to [hub.docker.com](https://hub.docker.com/r/mcroth/docker-zenoss4/)
+Many thanks for [hydruid](https://github.com/hydruid/zenoss/) for providing us a way to install zenoss4 on debian-based systems! Thanks for all the fish, Hydruid!
+
+I have tried to build the image with docker best practices in mind. Should there be anything of note you notice, please do not hesitate to leave a comment.
+
+## quickstart 
+```
+root@mcroth:~/sandbox# git clone https://github.com/krull/docker-zenoss4.git
+Cloning into 'docker-zenoss4'...
+remote: Counting objects: 69, done.
+remote: Compressing objects: 100% (53/53), done.
+remote: Total 69 (delta 19), reused 59 (delta 13), pack-reused 0
+Unpacking objects: 100% (69/69), done.
+Checking connectivity... done.
+root@mcroth:~/sandbox# cd docker-zenoss4/
+root@mcroth:~/sandbox/docker-zenoss4# docker-compose up -d
+Creating network "dockerzenoss4_back-tier" with driver "bridge"
+Creating zenoss4-redis
+Creating zenoss4-memcached
+Creating zenoss4-rabbitmq
+Creating zenoss4-mariadb
+Attaching to zenoss4-memcached, zenoss4-redis, zenoss4-rabbitmq, zenoss4-mariadb
+```
+
+For the automated build go to [hub.docker.com](https://hub.docker.com/r/mcroth/docker-zenoss4/).
 
 You can use this image directly from [hub.docker.com](https://hub.docker.com/r/mcroth/docker-zenoss4/) by issuing the following docker commands:
 ```
 docker pull mcroth/docker-zenoss4:latest
 ```
 
-Many thanks for [hydruid](https://github.com/hydruid/zenoss/) for providing us a way to install zenoss4 on debian-based systems! Thanks for all the fish, Hydruid!
-
-I have tried to build the image with docker best practices in mind. Should there be anything of note you notice, please do not hesitate to leave a comment.
+##default build
+There is a `Makefile`, with some directives on building `docker-zenoss4`. Have a look at that file and check the options. Issuing a `make` will run the default build.
 
