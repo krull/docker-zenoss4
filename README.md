@@ -1,5 +1,5 @@
 # docker-zenoss4
-`docker-zenoss4` is a dockerized, Debian 7 based, image for [Zenoss Core v4.2.5](http://wiki.zenoss.org/Install_Zenoss#Zenoss_Core_4.2.5), based on [Hydruid's core-autodeploy for Ubuntu/Debian](https://github.com/hydruid/zenoss/).
+`docker-zenoss4` is a dockerized, Debian 7 based, image for [Zenoss Core v4.2.5](http://wiki.zenoss.org/Install_Zenoss#Zenoss_Core_4.2.5), based on [Hydruid's core-autodeploy for Ubuntu/Debian](https://github.com/hydruid/zenoss/), with alterations, enhancements and security improvements in accordance to Docker's ephemeral ecosystem. Hydruid's work was based on OS Virtualization/Bare-metal installs, and for its time was sufficient for the task.
 
 ## Description
 In continuing my journey to learn Docker's Best Practices, I had the need to dockerize the Battle-tested, Zenoss 4.2.5. This time around, I knew that Zenoss4 has dependencies on other processes to work properly at 100%. So in true, docker spirit, I have segregated all the major services that comprises the Zenoss4 Stack into its own dockerized images, utilizing docker's default image library for the following:
@@ -10,7 +10,7 @@ In continuing my journey to learn Docker's Best Practices, I had the need to doc
 * [rabbitmq](https://hub.docker.com/_/rabbitmq/) - `rabbitmq` implements the Advanced Message Queuing Protocol (AMQP)
 * [nginx](https://hub.docker.com/_/nginx/) - `nginx` reverse http proxy 
 
-The main glue for all of this orchestration is really the [docker-compose.yml file](https://github.com/krull/docker-zenoss4/docker-compose.yml) that pulls everything together. You can read more information on `docker-compose` and how to install it on your docker host at [docker's website](https://docs.docker.com/compose/).
+The main glue for all of this orchestration is really the [docker-compose.yml file](https://github.com/krull/docker-zenoss4/docker-compose.yml) which pulls everything together. You can read more information on `docker-compose` and how to install it on your docker host at [docker's website](https://docs.docker.com/compose/).
 
 The [Dockerfile](https://github.com/krull/docker-zenoss4/Dockerfile) for the `zenoss4-core` build has directives that points to the necessary hostnames of each dockerized services mentioned above to function properly and collectively. There is a `.dockerignore` file that ignores the whole `init_fs` folder upon build time. Moreover, I have excluded some environmental variables in files called `.env` and `.env_make`. I have added sample files. Just rename them accordingly.
 
