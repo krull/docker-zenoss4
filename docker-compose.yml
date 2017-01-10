@@ -1,0 +1,108 @@
+version: '2'
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
+
+services:
+  zenoss4-memcached:
+    image: memcached:1.4
+    container_name: zenoss4-memcached
+    hostname: zenoss4-memcached
+    mem_limit: 1g
+    ports:
+      - "11211"
+    networks:
+      - back-tier
+
+  zenoss4-rabbitmq:
+    image: rabbitmq:3.6
+    container_name: zenoss4-rabbitmq
+    hostname: zenoss4-rabbitmq
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "./init_fs/var/lib/rabbitmq:/var/lib/rabbitmq:rw"
+    depends_on:
+      - zenoss4-memcached
+    environment:
+      - "RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}"
+      - "RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}"
+      - "RABBITMQ_DEFAULT_VHOST=${RABBITMQ_DEFAULT_VHOST}"
+    ports:
+      - "5672"
+    networks:
+      - back-tier
+
+  zenoss4-redis:
+    image: redis:3.0
+    container_name: zenoss4-redis
+    hostname: zenoss4-redis
+    volumes:
+      - "./init_fs/data:/data:rw"
+    depends_on:
+      - zenoss4-rabbitmq
+    ports:
+      - "6379"
+    networks:
+      - back-tier
+
+  zenoss4-mariadb:
+    image: mariadb:5.5
+    container_name: zenoss4-mariadb
+    hostname: zenoss4-mariadb
+    volumes:
+      - "./init_fs/docker-entrypoint-initdb.d/init.sh:/docker-entrypoint-initdb.d/init_sql.sh:ro"
+      - "./init_fs/etc/mysql/conf.d:/etc/mysql/conf.d:ro"
+      - "./init_fs/tmp/initdb.d:/tmp/initdb.d:ro"
+      - "./init_fs/var/lib/mysql:/var/lib/mysql:rw"
+#      - "./init_fs/var/log/mysql:/var/log/mysql:rw"
+      - "./init_fs/var/log/mysqld.log:/var/log/mysqld.log:rw"
+#      - "./init_fs/var/log/mysql.err:/var/log/mysql.err:rw"
+#      - "./init_fs/var/log/mysql.log:/var/log/mysql.log:rw"
+    depends_on:
+      - zenoss4-redis
+    environment:
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+    ports:
+      - "3306"
+    networks:
+      - back-tier
+
+  zenoss4-core:
+    image: mcroth/docker-zenoss4 
+    container_name: zenoss4-core
+    hostname: zenoss4-core
+#    volumes:
+#      - "./init_fs/usr/local/zenoss/log:/usr/local/zenoss/log:rw"
+    links:
+      - zenoss4-memcached
+      - zenoss4-rabbitmq
+      - zenoss4-redis
+      - zenoss4-mariadb 
+    depends_on:
+      - zenoss4-mariadb
+    ports:
+      - "8080"
+    networks:
+      - back-tier
+
+  zenoss4-nginx:
+    image: nginx:alpine
+    container_name: zenoss4-nginx
+    hostname: zenoss4-nginx
+    volumes:
+      - "./init_fs/etc/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro"
+#      - "./init_fs/etc/nginx/ssl:/etc/nginx/ssl:ro"
+    links:
+      - zenoss4-core
+    depends_on:
+      - zenoss4-core
+    ports:
+      - "80:80"
+#      - "443:443"
+    networks:
+      - back-tier
+      - front-tier
+

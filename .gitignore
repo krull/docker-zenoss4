@@ -5,6 +5,3 @@
 *.swp
 init_fs/var/lib/mysql/*
 init_fs/var/lib/rabbitmq/*
-docker-compose.yml
-Dockerfile
-Makefile
