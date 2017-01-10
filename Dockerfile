@@ -45,6 +45,7 @@ ARG ZENOSS_BUILD_DEPS_DEV="\
     python-gnutls \
     python-twisted-web \
     python-samba \
+    python-yaml \
     libsnmp-base \
     bc \
     libncurses5 \

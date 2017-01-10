@@ -57,10 +57,7 @@ services:
       - "./init_fs/etc/mysql/conf.d:/etc/mysql/conf.d:ro"
       - "./init_fs/tmp/initdb.d:/tmp/initdb.d:ro"
       - "./init_fs/var/lib/mysql:/var/lib/mysql:rw"
-#      - "./init_fs/var/log/mysql:/var/log/mysql:rw"
       - "./init_fs/var/log/mysqld.log:/var/log/mysqld.log:rw"
-#      - "./init_fs/var/log/mysql.err:/var/log/mysql.err:rw"
-#      - "./init_fs/var/log/mysql.log:/var/log/mysql.log:rw"
     depends_on:
       - zenoss4-redis
     environment:
