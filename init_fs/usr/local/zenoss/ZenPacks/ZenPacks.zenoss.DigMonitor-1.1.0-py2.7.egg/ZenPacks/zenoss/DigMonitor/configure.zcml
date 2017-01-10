@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <adapter factory=".info.DigMonitorDataSourceInfo"
+           for=".datasources.DigMonitorDataSource.DigMonitorDataSource"
+           provides=".interfaces.IDigMonitorDataSourceInfo"
+           />
+  <utility provides="zope.schema.interfaces.IVocabularyFactory"
+           component=".info.recordTypeVocabulary"
+           name="dnsMonitorRecordTypeVocabulary"/>
+  
+  <subscriber zcml:condition="installed ZenPacks.zenoss.DistributedCollector.interfaces"
+              for="ZenPacks.zenoss.DistributedCollector.DistributedPerformanceConf.DistributedPerformanceConf
+                   ZenPacks.zenoss.DistributedCollector.interfaces.ICollectorInstalled"
+              handler=".onCollectorInstalled"/>
+</configure>

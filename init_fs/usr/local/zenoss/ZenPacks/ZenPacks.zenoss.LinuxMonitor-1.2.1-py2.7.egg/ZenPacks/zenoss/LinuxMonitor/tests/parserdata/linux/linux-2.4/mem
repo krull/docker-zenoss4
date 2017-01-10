@@ -1,0 +1,28 @@
+/bin/cat /proc/meminfo
+        total:    used:    free:  shared: buffers:  cached:
+Mem:  4127739904 3969593344 158146560        0 359292928 1930383360
+Swap: 2147475456        0 2147475456
+MemTotal:      4030996 kB
+MemFree:        154440 kB
+MemShared:           0 kB
+Buffers:        350872 kB
+Cached:        1885140 kB
+SwapCached:          0 kB
+Active:        2862736 kB
+ActiveAnon:    1383196 kB
+ActiveCache:   1479540 kB
+Inact_dirty:    578236 kB
+Inact_laundry:  104920 kB
+Inact_clean:     74868 kB
+Inact_target:   724152 kB
+HighTotal:     3211208 kB
+HighFree:       133996 kB
+LowTotal:       819788 kB
+LowFree:         20444 kB
+SwapTotal:     2097144 kB
+SwapFree:      2097144 kB
+CommitLimit:   4112640 kB
+Committed_AS:  2921484 kB
+HugePages_Total:     0
+HugePages_Free:      0
+Hugepagesize:     2048 kB

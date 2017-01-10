@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           >
+
+  <!-- Define a place for our zenpack to register javascript -->
+  <browser:resourceDirectory
+      name="esxtop"
+      directory="resources"
+      />
+
+  <browser:viewlet
+      name="js-esxtop"
+      paths="/++resource++esxtop/js/VirtualMachine.js"
+      weight="20"
+      manager="Products.ZenUI3.browser.interfaces.IHeadExtraManager"
+      class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+      permission="zope2.Public"
+      />
+
+</configure>
+

@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Manufacturers', 'Dell') -->
+<object id='/zport/dmd/Manufacturers/Dell' module='Products.ZenModel.Manufacturer' class='Manufacturer'>
+<tomanycont id='products'>
+<object id='Dell Inc. PERC 4e_Di RAID Controller' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. PERC 4e_Di RAID Controller
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. PERC 4e/Di RAID Controller']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell Inc. PERC 4e_Si RAID Controller' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. PERC 4e_Si RAID Controller
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. PERC 4e/Si RAID Controller']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell Inc. Remote Access Controller _Integrated' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. Remote Access Controller _Integrated
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. Remote Access Controller (Integrated)']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell Inc. Remote Access Controller _PCI' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. Remote Access Controller _PCI
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. Remote Access Controller (PCI)']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell Inc. http___www.dell.com ERA' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. http___www.dell.com ERA
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. http://www.dell.com ERA']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell Inc. http___www.dell.com PERC 3_Di' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+Dell Inc. http___www.dell.com PERC 3_Di
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. http://www.dell.com PERC 3/Di']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell OpenManage' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Dell OpenManage
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell OpenManage']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell OpenManage Array Manager' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Dell OpenManage Array Manager
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell OpenManage Array Manager']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Dell OpenManage Server Administrator' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Dell OpenManage Server Administrator
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell OpenManage Server Administrator']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PERC 4_im' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PERC 4_im
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. (OEM: LSI Logic, Symbios Logic, NCR) PERC 4/im']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PERC 4e Integrated RAID Controller' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PERC 4e Integrated RAID Controller
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. PERC 4e Integrated RAID Controller']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PERC 4e_DC RAID Controller' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PERC 4e_DC RAID Controller
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Dell Inc. (OEM: LSI Logic, Symbios Logic, NCR) PERC 4e/DC RAID Controller']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 1850' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 1850
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 1850']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 1855' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 1855
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 1855']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 2550' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 2550
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 2550']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 2650' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 2650
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 2650']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 2850' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 2850
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 2850']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 430' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 430
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 430']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 6850' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 6850
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 6850']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 850' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 850
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 850']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='PowerEdge 1950' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+PowerEdge 1950
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['PowerEdge 1950']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='bonding-2.6.1dell-1dkms' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+bonding-2.6.1dell-1dkms
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['bonding-2.6.1dell-1dkms']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='sr_mod-Dell_RHEL4a-3dkms' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+sr_mod-Dell_RHEL4a-3dkms
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['sr_mod-Dell_RHEL4a-3dkms']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+</tomanycont>
+</object>
+</objects>

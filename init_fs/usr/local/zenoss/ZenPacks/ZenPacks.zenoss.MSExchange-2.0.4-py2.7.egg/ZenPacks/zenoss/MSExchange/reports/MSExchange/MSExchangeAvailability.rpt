@@ -1,0 +1,153 @@
+<tal:block tal:define="
+    tableName string:exchangeAvailabilityTable;
+    tm here/ZenTableManager;
+    objects python:here.ReportServer.plugin('MSExchangeAvailability', here.REQUEST);
+    batch python:tm.getBatch(tableName, objects);
+    exportFields python:['device', 'availability', 'uptime',
+        'MSExchangeES',
+        'IMAP4Svc',
+        'MSExchangeIS',
+        'MSExchangeMGMT',
+        'MSExchangeMTA',
+        'POP3Svc',
+        'RESvc',
+        'MSExchangeSRS',
+        'MSExchangeSA',
+        'SMTPSVC',
+        'W3SVC',
+        'IISADMIN',
+        'SMTPSVC',
+        ];
+    ">
+
+<tal:block metal:use-macro="here/reportMacros/macros/exportableReport">
+<tal:block metal:fill-slot="report">
+
+<tal:block metal:use-macro="here/templates/macros/page1">
+<tal:block metal:fill-slot="head-local">
+    <style type="text/css">
+        table.innerzentable {
+            border-collapse:collapse;
+        }
+
+        .grid {
+            text-align:center;
+            margin:0px;
+            padding:1px;
+            border-style:solid;
+            border-color:black;
+        }
+
+        td.grid {
+            border-width:1px 1px 1px 1px;
+        }
+
+        th.grid {
+            border-width:0px 0px 1px 1px;
+            font-size:7pt;
+            font-weight:normal;
+        }
+    </style>
+</tal:block>
+
+<tal:block metal:fill-slot="breadCrumbPane">
+    <span metal:use-macro="here/miscmacros/macros/reportBreadCrumbsList"/>
+</tal:block>
+<tal:block metal:fill-slot="contentPane"> 
+
+<form method="POST" tal:attributes="action request/URL" tal:define="
+    tabletitle string:MS Exchange Availability;
+    showfilterbox python:True;
+    tblcolspan string:16">
+
+<tal:block metal:use-macro="here/zenuimacros/macros/zentable">
+<tal:block metal:fill-slot="zentablecontents">
+    <tr>
+        <th tal:replace="structure python:tm.getTableHeader(
+            tableName,'device','Device')"/>
+        <th tal:replace="structure python:tm.getTableHeader(
+            tableName,'availability','Availability')"/>
+        <th tal:replace="structure python:tm.getTableHeader(
+            tableName,'uptime','Uptime')"/>
+        <th class="tableheader grid">MSExchangeES</th>
+        <th class="tableheader grid">IMAP4Svc</th>
+        <th class="tableheader grid">MSExchangeIS</th>
+        <th class="tableheader grid">MSExchangeMGMT</th>
+        <th class="tableheader grid">MSExchangeMTA</th>
+        <th class="tableheader grid">POP3Svc</th>
+        <th class="tableheader grid">RESvc</th>
+        <th class="tableheader grid">MSExchangeSRS</th>
+        <th class="tableheader grid">MSExchangeSA</th>
+        <th class="tableheader grid">SMTPSVC</th>
+        <th class="tableheader grid">W3SVC</th>
+        <th class="tableheader grid">IISADMIN</th>
+        <th class="tableheader grid">SMTPSVC</th>
+    </tr>
+
+    <tal:block tal:repeat="r batch">
+    <tr tal:define="odd repeat/r/odd"
+        tal:attributes="class python:test(odd,'odd','even')">
+
+        <td class="tablevalues">
+            <a tal:content="r/device" tal:attributes="
+                href python:r.deviceUrl+'/viewDevicePerformance'"/>
+        </td>
+        <td class="tablevalues" tal:content="r/availability_string"/>
+        <td class="tablevalues" tal:content="r/uptime_string"/>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeES_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/IMAP4Svc_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeIS_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeMGMT_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeMTA_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/POP3Svc_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/RESvc_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeSRS_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/MSExchangeSA_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/SMTPSVC_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/W3SVC_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/IISADMIN_img"/></td>
+
+        <td class="tablevalues grid">
+            <img tal:attributes="src r/SMTPSVC_img"/></td>
+
+        </tr>
+    </tal:block>
+
+    <tr>
+        <td colspan="16" class="tableheader" align='center'>
+        <form metal:use-macro="here/zenTableNavigation/macros/navtool"/>
+        </td>
+    </tr>
+</tal:block>
+</tal:block>
+</form>
+
+</tal:block>
+</tal:block>
+</tal:block>
+</tal:block>
+</tal:block>

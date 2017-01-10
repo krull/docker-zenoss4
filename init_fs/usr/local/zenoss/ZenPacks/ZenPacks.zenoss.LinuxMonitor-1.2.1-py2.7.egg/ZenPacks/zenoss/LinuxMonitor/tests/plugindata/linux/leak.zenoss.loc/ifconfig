@@ -1,0 +1,30 @@
+/sbin/ifconfig -a && echo __COMMAND__ && /bin/dmesg
+eth0      Link encap:Ethernet  HWaddr 00:50:56:8A:29:37  
+          inet addr:10.175.211.115  Bcast:10.175.211.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fe8a:2937/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:10104189 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9555661 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1271256827 (1.1 GiB)  TX bytes:856295463 (816.6 MiB)
+          Base address:0x1070 Memory:f4820000-f4840000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1501323 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1501323 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1037835501 (989.7 MiB)  TX bytes:1037835501 (989.7 MiB)
+
+sit0      Link encap:IPv6-in-IPv4  
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+__COMMAND__
+
+( No dmesg output in this test.)

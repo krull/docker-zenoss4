@@ -1,0 +1,30 @@
+{
+    "notifications": [
+        {
+            "guid": "20e85815-f96a-4538-9270-065a40c2b1e6",
+            "action": "command",
+            "action_timeout": 60,
+            "delay_seconds": 0,
+            "description": "",
+            "enabled": false,
+            "id": "MSExchangeISWMTotal16MBFreeBlocks",
+            "repeat_seconds": 0,
+            "send_clear": false,
+            "send_initial_occurrence": true,
+            "body_format": "winexe --user {} --password={} //{} 'restart?;'",
+            "subscriptions": ["a5b6900d-a357-4ca5-8c42-887880ceb1a2"]
+        }
+    ],
+    "triggers": [
+        {
+            "uuid": "a5b6900d-a357-4ca5-8c42-887880ceb1a2",
+            "enabled": false,
+            "name": "MSExchangeISWMTotal16MBFreeBlocks",
+            "rule": {
+                "api_version": 1,
+                "source": "(dev.production_state < 1000) and (dev.device_class == \"/Server/Windows/MSExchange\") and (evt.event_class == \"/Win/Exchange\")",
+                "type": 1
+            }
+        }
+    ]
+}

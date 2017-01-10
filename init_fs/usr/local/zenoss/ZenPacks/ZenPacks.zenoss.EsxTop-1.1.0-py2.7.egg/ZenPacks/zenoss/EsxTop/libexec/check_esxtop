@@ -1,0 +1,393 @@
+#!/usr/bin/env python
+##############################################################################
+# 
+# Copyright (C) Zenoss, Inc. 2010, all rights reserved.
+# 
+# This content is made available according to terms specified in
+# License.zenoss under the directory where your Zenoss product is installed.
+# 
+##############################################################################
+
+
+__doc__ = """check_esxtop
+
+Run the resxtop command and return parsed output suitable for consumption
+by the esx.esxtop parser
+"""
+
+import sys
+import os
+import os.path
+import getopt
+import re
+import types
+import time
+from itertools import izip, imap, ifilter
+from subprocess import Popen, PIPE
+from optparse import OptionParser
+from StringIO import StringIO
+from fcntl import flock, LOCK_EX, LOCK_SH
+
+import Globals
+from Products.ZenUtils.Utils import prepId
+
+
+class EsxTopRunner(object):
+    statToRegex = {
+        'Memory': '".*%s\\\(.*)"',
+        'Physical Cpu': '".*%s\(%s\)\\\(.*)\""',
+        'Physical Cpu Load': '".*%s\\\(.*)"',
+    }
+
+    def __init__(self, argv=None):
+        self.args = argv
+        self.buildOptions()
+        self.parseOptions()
+        self.cacheLock = None
+
+    def buildOptions(self):
+        self.parser = OptionParser(
+                         description='Gather ESX performance status via resxtop.')
+
+        self.parser.add_option('-s', '--server', dest='server',
+                        help='Target ESX host')
+        self.parser.add_option('--vcserver', dest='vcserver',
+                        help='VC server that controls access to the ESX host')
+        self.parser.add_option('-u', '--user', dest='user',
+                        help='User with resxtop access')
+        self.parser.add_option('-f', '--configFile', dest='configFile',
+                        default=None,
+                        help='esxtop config file to use')
+        self.parser.add_option('-t', '--cacheFileFormat', dest='cacheFileFormat',
+                        default='/tmp/.%s.cache',
+                        help='Format of the name of the temp file of resxtop results')
+        self.parser.add_option('-x', '--showCommandOnly', dest='showCommandOnly',
+                        default=False, action='store_true',
+                        help='Show the command to be run and exit without executing')
+        self.parser.add_option('-d', '--statCategory', dest='statCategory',
+                        default='Group Cpu',
+                        help='Statistic type (datasource) to return')
+        self.parser.add_option('-c', '--component', dest='component',
+                        help='Specific component for which to return datapoints for the datasource')
+        self.parser.add_option('-k', '--cactiFormat', dest='cactiFormat',
+                        default=False, action='store_true',
+                        help='Return data in Cacti format?')
+        self.parser.add_option('-p', '--password', dest='password',
+                        help='ESX password (if the environment varialbe VI_PASSWORD is not set)')
+        self.parser.add_option('-m', '--matchRegex', dest='matchRegex',
+                        help='Regex for filtering data sources and return datapoint names')
+        self.parser.add_option('-l', '--skipCall', dest='skipCall',
+                        default=False, action='store_true',
+                        help='Skip the call and use the temp file that exists')
+        self.parser.add_option('-a', '--showAll', dest='showAll',
+                        default=False, action='store_true',
+                        help='Just show output without using regexes')
+        self.parser.add_option('--showvms', dest='showvms',
+                        default=False, action='store_true',
+                        help='Show all VMs on the host')
+        self.parser.add_option('--showdatasources', dest='showdatasources',
+                        default=False, action='store_true',
+                        help='Show all datasources on the host')
+        self.parser.add_option('--maxcacheage', dest='maxcacheage',
+                        default=300.0, type='int',
+                        help='How long to keep the cache file around')
+
+    def parseOptions(self):
+        args = self.args
+        if not args:
+            args = sys.argv[1:]
+        (self.options, self.args) = self.parser.parse_args(args=args)
+
+        if not self.options.server:
+            print >>sys.stderr, "Require the server name of the ESX server!"
+            self.parser.print_help()
+            sys.exit(1)
+
+        if not self.options.user and not self.options.skipCall:
+            print >>sys.stderr, "Require the user name allowed to access the ESX server!"
+            self.parser.print_help()
+            sys.exit(1)
+
+        if 'VI_PASSWORD' in os.environ:
+            self.options.password = os.environ['VI_PASSWORD']
+
+        if not self.options.password and not self.options.skipCall:
+            print >>sys.stderr, "Require the password to access the ESX server!"
+            self.parser.print_help()
+            sys.exit(1)
+
+        if self.options.matchRegex is None:
+            defaultRegex = '".*%s\([0-9]*:%s\)\\\(.*)"'
+            self.options.matchRegex = self.statToRegex.get(
+                  self.options.statCategory, defaultRegex)
+
+    def run(self):
+        # Cache results if possible
+        cacheFile = self.options.cacheFileFormat % self.options.server
+
+        command = self.create_resxtop_command(cacheFile)
+        if self.options.showCommandOnly:
+            print command
+            return 0
+
+        if self.options.skipCall:
+            pass
+        elif self.useCache(cacheFile):
+            self.lockCache(cacheFile)
+        else:
+            self.lockCache(cacheFile, readLock=False)
+            self.resxtop(command)
+
+        result = self.parseTempFile(cacheFile)
+        sys.exit(result)
+
+    def useCache(self, cacheFile):
+        """
+        We try to make use of a cache file in order to enhance our performance.
+        """
+        if not os.path.exists(cacheFile):
+            return False
+
+        cacheUpdateTime = os.stat(cacheFile).st_mtime
+        if (time.time() - cacheUpdateTime) > self.options.maxcacheage:
+            return False
+
+        return True
+
+    def lockCache(self, cacheFile, readLock=True):
+        """
+        Get a read or write lock on the cache file.
+        """
+        lockType = LOCK_SH if readLock else LOCK_EX
+
+        lockFile = cacheFile + '.cachelock'
+        if not os.path.exists(lockFile):
+            open(lockFile, 'w').close()
+
+        self.cacheLock = open(lockFile, 'r+')
+
+        # Blocking wait on access to the file descriptor
+        # If we bail, the lock is released
+        flock(self.cacheLock.fileno(), lockType)
+
+        # We *EXPLICITLY* want the cacheLock to be open to ensure
+        # that no-one diddles with the cache while we are
+        # looking at it.
+        # Do NOT close the file handle!
+
+    def resxtop(self, command):
+        """
+        Run the resxtop command and return the output into a cache file,
+        or die and print the error message.
+        """
+        password = self.options.password
+        env = dict(VI_PASSWORD=password)
+        proc = Popen(command, env=env, stderr=PIPE, shell=True)
+        ouput, warnings = proc.communicate()
+        proc.wait()
+        if proc.returncode:
+            warnings = warnings.strip()
+            if warnings == 'Login failed, reason: Success':
+                print "Bad hostname provided '%s'" % self.options.server
+            else:
+                print warnings
+            sys.exit(1)
+
+    def create_resxtop_command(self, cacheFile):
+        server = self.options.server
+        username = self.options.user
+        if self.options.configFile:
+            configFile = '-c %s' % self.options.configFile
+        else:
+            configFile = '-a'
+
+        viserver = self.options.vcserver
+        if viserver:
+            COMMAND_FORMAT = """resxtop --server %s --vihost %s --username "%s" -n 1 -b "%s" 1> "%s" """
+            command = COMMAND_FORMAT % (viserver, server, username, configFile, cacheFile)
+        else:
+            COMMAND_FORMAT = """resxtop --server %s --username "%s" -n 1 -b "%s" 1> "%s" """
+            command = COMMAND_FORMAT % (server, username, configFile, cacheFile)
+        return command
+
+    def createPrinter(self):
+        if self.options.showAll:
+            return Printer( '(.*)' )
+        elif self.options.showvms:
+            # Pick a category that shows the system names
+            matchRegex = ".*Group Cpu\([0-9]+:([^)]*)\)"
+            return VmPrinter(matchRegex)
+        elif self.options.showdatasources:
+            matchRegex = '([^(]+).*'
+            return DatasourcePrinter(matchRegex)
+        else:
+            dsType = self.options.statCategory
+            component = self.options.component
+            matchRegex = self.options.matchRegex
+            if self.options.cactiFormat:
+                return CactiPrinter(dsType, component, matchRegex)
+            else:
+                return SimpleFilteringPrinter(dsType, component, matchRegex)
+
+    def parseTempFile(self, cacheFile):
+        """
+        The output from esxtop consists of two or three lines:
+
+        - junk (may or not be there)
+        - list of column names
+        - list of values
+        """
+        if not os.path.exists(cacheFile):
+            print >>sys.stderr, "The -l switch specified but no cache file %s exists" % \
+                cacheFile
+            sys.exit(1)
+        data = open(cacheFile).readlines()
+        if len(data) == 3:
+            data.pop(0)
+        try:
+            names = data[0].split(',')
+            values = data[1].split(',')
+        except IndexError:
+            print "ERROR: No valid data received, removing cache file '%s'" % (
+                        cacheFile)
+            # ... and the cache file is busted
+            os.unlink(cacheFile)
+            sys.exit(1)
+
+        if len(names) != len(values):
+            print 'ERROR: Differing number of param names vs values received'
+            # ... and the cache file is busted
+            os.unlink(cacheFile)
+            sys.exit(1)
+        printer = self.createPrinter()
+        printer.printPairs( izip(names,values) )
+
+
+class Printer:
+    outputFormat = '%s\t%s\n'
+
+    def __init__(self, matchRegex=r'(.*)'):
+        self.matchRegex = re.compile(matchRegex)
+    
+    def filter(self, nameValue):
+        return nameValue[0] is not None
+
+    def getDp(self, nameValue):
+        match = self.matchRegex.match( nameValue[0] )
+        if match:
+            dp = prepId( match.group(1) )
+            value = nameValue[1].replace('"','')
+            return (dp,value)
+        else:
+            return (None,None)
+
+    def printPairs(self, nameValuePairs):
+        outstring = ''
+        for name, value in ifilter(self.filter, imap(self.getDp, nameValuePairs) ):
+            outstring += self.outputFormat % (name, value)
+        print outstring
+
+
+class ColumnPrinter(Printer):
+    outputFormat = '%s\n'
+
+    def getDp(self, nameValue):
+        match = self.matchRegex.match( nameValue[0] )
+        if match:
+            dp = prepId( match.group(1) )
+            return (dp,None)
+        else:
+            return (None,None)
+
+    def printPairs(self, nameValuePairs):
+        outstring = ''
+        printedVms = set()
+        for name, value in ifilter(self.filter, imap(self.getDp, nameValuePairs) ):
+            if name not in printedVms:
+                outstring += self.outputFormat % name
+                printedVms.add(name)
+        print outstring
+
+
+class DatasourcePrinter(ColumnPrinter):
+    def filter(self, nameValue):
+        name = nameValue[0]
+        if name is None:
+            return False
+        return True
+
+    def getDp(self, nameValue):
+        name = nameValue[0].strip('"')
+        if not name.startswith('\\'):
+            return (None, None)
+        path = name.split('\\')
+        name = path[3]
+        match = self.matchRegex.match(name)
+        if match:
+            return (match.group(1), None)
+        return (None, None)
+
+
+class VmPrinter(ColumnPrinter):
+    notVms = [
+        'host',
+        'idle',
+        'system',
+        'vim',
+        'user',
+        'kernel',
+        'helper',
+        'drivers',
+        'vmotion',
+        'vmci',
+        'console',
+        'uwdefault',
+        'vmkauthd',
+        'kmanaged',
+        'kunmanaged',
+        'vmkapimod',
+        'LinuxTaskMemPool',
+        'FT',
+    ]
+    notVmsRegexes = map(re.compile, [
+        'vobd\.[0-9]+',
+        'net-cdp\.[0-9]+',
+        'vmkiscsid\.[0-9]+',
+        'vmware-vmkauthd\.[0-9]+',
+        'pool[0-9]+',
+    ])
+
+    def filter(self, nameValue):
+        name = nameValue[0]
+        if name is None:
+            return False
+        elif name in self.notVms:
+            return False
+
+        for regex in self.notVmsRegexes:
+            if regex.match(name):
+                return False
+        return True
+
+
+class SimpleFilteringPrinter(Printer):
+    def __init__( self, datasource, component, matchRegexTemplate ):
+        regexArgs = [ datasource ]
+        if component:
+            regexArgs.append(component)
+        try:
+            matchRegex = matchRegexTemplate % tuple(regexArgs)
+            Printer.__init__(self, matchRegex)
+        except TypeError:
+            print 'The datasource %s requires a component in %s' % (
+                    datasource, matchRegexTemplate)
+            sys.exit(1) 
+
+
+class CactiPrinter(SimpleFilteringPrinter):
+    outputFormat = '%s:%s '
+
+
+if __name__ == "__main__":
+    esxtop = EsxTopRunner()
+    esxtop.run()

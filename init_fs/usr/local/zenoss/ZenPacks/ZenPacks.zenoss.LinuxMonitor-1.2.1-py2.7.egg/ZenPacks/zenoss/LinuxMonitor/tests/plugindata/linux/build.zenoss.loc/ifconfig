@@ -1,0 +1,577 @@
+/sbin/ifconfig -a && echo __COMMAND__ && /bin/dmesg
+eth0      Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.175.211.17  Bcast:10.175.211.255  Mask:255.255.255.0
+          inet6 addr: fe80::215:c5ff:fee0:b865/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:531722227 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:497277785 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:2211639851 (2.0 GiB)  TX bytes:2007176218 (1.8 GiB)
+          Interrupt:169 
+
+eth0:1    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.23  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:2    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.22  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:3    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.24  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:4    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.2  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:5    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.3  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:6    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.4  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:7    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.6  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:8    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.7  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:9    Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.1  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:10   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.8  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:11   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.9  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:12   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.10  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:13   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.11  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:14   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.12  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:15   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.13  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:16   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.14  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:17   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.15  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:18   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.16  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:19   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.17  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:20   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.18  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:21   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.19  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:22   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.20  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:23   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.21  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth0:24   Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:65  
+          inet addr:10.1.13.25  Bcast:10.1.13.255  Mask:255.255.255.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:169 
+
+eth1      Link encap:Ethernet  HWaddr 00:15:C5:E0:B8:66  
+          BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+          Interrupt:217 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:116396 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:116396 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:31504402 (30.0 MiB)  TX bytes:31504402 (30.0 MiB)
+
+sit0      Link encap:IPv6-in-IPv4  
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+vmnet1    Link encap:Ethernet  HWaddr 00:50:56:C0:00:01  
+          inet addr:172.16.121.1  Bcast:172.16.121.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fec0:1/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+vmnet8    Link encap:Ethernet  HWaddr 00:50:56:C0:00:08  
+          inet addr:172.16.56.1  Bcast:172.16.56.255  Mask:255.255.255.0
+          inet6 addr: fe80::250:56ff:fec0:8/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+__COMMAND__
+Linux version 2.6.9-34.0.2.ELsmp (buildcentos@v20z-i386) (gcc version 3.4.5 20051201 (Red Hat 3.4.5-2)) #1 SMP Fri Jul 7 19:52:49 CDT 2006
+BIOS-provided physical RAM map:
+ BIOS-e820: 0000000000000000 - 00000000000a0000 (usable)
+ BIOS-e820: 0000000000100000 - 00000000effc0000 (usable)
+ BIOS-e820: 00000000effc0000 - 00000000effcfc00 (ACPI data)
+ BIOS-e820: 00000000effcfc00 - 00000000effff000 (reserved)
+ BIOS-e820: 00000000f0000000 - 00000000f4000000 (reserved)
+ BIOS-e820: 00000000fec00000 - 00000000fed00400 (reserved)
+ BIOS-e820: 00000000fed13000 - 00000000feda0000 (reserved)
+ BIOS-e820: 00000000fee00000 - 00000000fee10000 (reserved)
+ BIOS-e820: 00000000ffb00000 - 0000000100000000 (reserved)
+ BIOS-e820: 0000000100000000 - 0000000110000000 (usable)
+3456MB HIGHMEM available.
+896MB LOWMEM available.
+found SMP MP-table at 000fe710
+NX (Execute Disable) protection: active
+On node 0 totalpages: 1114112
+  DMA zone: 4096 pages, LIFO batch:1
+  Normal zone: 225280 pages, LIFO batch:16
+  HighMem zone: 884736 pages, LIFO batch:16
+DMI 2.3 present.
+Using APIC driver default
+ACPI: RSDP (v000 DELL                                  ) @ 0x000fd160
+ACPI: RSDT (v001 DELL   PE850    0x00000001 MSFT 0x0100000a) @ 0x000fd174
+ACPI: FADT (v001 DELL   PE850    0x00000001 MSFT 0x0100000a) @ 0x000fd1b8
+ACPI: MADT (v001 DELL   PE850    0x00000001 MSFT 0x0100000a) @ 0x000fd22c
+ACPI: SPCR (v001 DELL   PE850    0x00000001 MSFT 0x0100000a) @ 0x000fd2a0
+ACPI: HPET (v001 DELL   PE830    0x00000001 MSFT 0x0100000a) @ 0x000fd2f0
+ACPI: MCFG (v001 DELL   PE830    0x00000001 MSFT 0x0100000a) @ 0x000fd328
+ACPI: DSDT (v001 DELL   PE830    0x00000001 MSFT 0x0100000e) @ 0x00000000
+ACPI: PM-Timer IO Port: 0x808
+ACPI: Local APIC address 0xfee00000
+ACPI: LAPIC (acpi_id[0x01] lapic_id[0x00] enabled)
+Processor #0 15:6 APIC version 20
+ACPI: LAPIC (acpi_id[0x02] lapic_id[0x01] enabled)
+Processor #1 15:6 APIC version 20
+ACPI: LAPIC_NMI (acpi_id[0x01] high edge lint[0x1])
+ACPI: LAPIC_NMI (acpi_id[0x02] high edge lint[0x1])
+Enabling APIC mode:  Flat.  Using 0 I/O APICs
+ACPI: IOAPIC (id[0x02] address[0xfec00000] gsi_base[0])
+IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+ACPI: IOAPIC (id[0x03] address[0xfec10000] gsi_base[32])
+IOAPIC[1]: apic_id 3, version 32, address 0xfec10000, GSI 32-55
+ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+ACPI: IRQ0 used by override.
+ACPI: IRQ2 used by override.
+ACPI: IRQ9 used by override.
+ACPI: HPET id: 0xffffffff base: 0xfed00000
+Using ACPI (MADT) for SMP configuration information
+Built 1 zonelists
+Kernel command line: ro root=/dev/VolGroup00/LogVol00 rhgb quiet
+Initializing CPU#0
+CPU 0 irqstacks, hard=c03ea000 soft=c03ca000
+PID hash table entries: 4096 (order: 12, 65536 bytes)
+Console: colour VGA+ 80x25
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Memory: 4151528k/4456448k available (1868k kernel code, 41552k reserved, 755k data, 180k init, 3276544k highmem)
+Using HPET for base-timer
+Using HPET for gettimeofday
+Detected 3000.458 MHz processor.
+Using hpet for high-res timesource
+Calibrating delay using timer specific routine.. 6004.58 BogoMIPS (lpj=3002292)
+Security Scaffold v1.0.0 initialized
+SELinux:  Initializing.
+SELinux:  Starting in permissive mode
+There is already a security framework initialized, register_security failed.
+selinux_register_security:  Registering secondary module capability
+Capability LSM initialized as secondary
+Mount-cache hash table entries: 512 (order: 0, 4096 bytes)
+CPU: After generic identify, caps: bfebfbff 20100000 00000000 00000000
+CPU: After vendor identify, caps:  bfebfbff 20100000 00000000 00000000
+monitor/mwait feature present.
+using mwait in idle threads.
+CPU: Trace cache: 12K uops, L1 D cache: 16K
+CPU: L2 cache: 2048K
+CPU0: Physical Processor ID: 0
+CPU0: Processor Core ID: 0
+CPU0: Initial APIC ID: 0
+CPU: After all inits, caps:        bfebfbff 20100000 00000000 00000080
+Intel machine check architecture supported.
+Intel machine check reporting enabled on CPU#0.
+CPU0: Intel P4/Xeon Extended MCE MSRs (24) available
+CPU0: Thermal monitoring enabled
+Enabling fast FPU save and restore... done.
+Enabling unmasked SIMD FPU exception support... done.
+Checking 'hlt' instruction... OK.
+CPU0: Intel(R) Pentium(R) D CPU 3.00GHz stepping 04
+per-CPU timeslice cutoff: 1761.60 usecs.
+task migration cache decay timeout: 2 msecs.
+Booting processor 1/1 eip 3000
+CPU 1 irqstacks, hard=c03eb000 soft=c03cb000
+Initializing CPU#1
+Calibrating delay using timer specific routine.. 6000.51 BogoMIPS (lpj=3000258)
+CPU: After generic identify, caps: bfebfbff 20100000 00000000 00000000
+CPU: After vendor identify, caps:  bfebfbff 20100000 00000000 00000000
+monitor/mwait feature present.
+CPU: Trace cache: 12K uops, L1 D cache: 16K
+CPU: L2 cache: 2048K
+CPU1: Physical Processor ID: 0
+CPU1: Processor Core ID: 1
+CPU1: Initial APIC ID: 1
+CPU: After all inits, caps:        bfebfbff 20100000 00000000 00000080
+Intel machine check architecture supported.
+Intel machine check reporting enabled on CPU#1.
+CPU1: Intel P4/Xeon Extended MCE MSRs (24) available
+CPU1: Thermal monitoring enabled
+CPU1: Intel(R) Pentium(R) D CPU 3.00GHz stepping 04
+Total of 2 processors activated (12005.10 BogoMIPS).
+ENABLING IO-APIC IRQs
+..TIMER: vector=0x31 pin1=2 pin2=-1
+checking TSC synchronization across 2 CPUs: passed.
+Brought up 2 CPUs
+zapping low mappings.
+checking if image is initramfs... it is
+Freeing initrd memory: 1066k freed
+NET: Registered protocol family 16
+PCI: PCI BIOS revision 2.10 entry at 0xfbdce, last bus=6
+PCI: Using MMCONFIG
+mtrr: v2.0 (20020519)
+ACPI: Subsystem revision 20040816
+ACPI: Interpreter enabled
+ACPI: Using IOAPIC for interrupt routing
+ACPI: PCI Root Bridge [PCI0] (00:00)
+PCI: Probing PCI hardware (bus 00)
+PCI: Ignoring BAR0-3 of IDE controller 0000:00:1f.1
+PCI: Transparent bridge - 0000:00:1e.0
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PES1._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PEP0._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PEP0.PXHA._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PEP1._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PEP2._PRT]
+ACPI: PCI Interrupt Routing Table [\_SB_.PCI0.PCIS._PRT]
+ACPI: PCI Interrupt Link [LNKA] (IRQs *3 4 5 6 7 9 10 11 12)
+ACPI: PCI Interrupt Link [LNKB] (IRQs 3 4 5 6 7 9 10 *11 12)
+ACPI: PCI Interrupt Link [LNKC] (IRQs 3 4 5 6 7 9 10 11 12) *0, disabled.
+ACPI: PCI Interrupt Link [LNKD] (IRQs 3 4 *5 6 7 9 10 11 12)
+ACPI: PCI Interrupt Link [LNKE] (IRQs 3 4 5 6 7 9 10 *11 12)
+ACPI: PCI Interrupt Link [LNKF] (IRQs 3 4 5 6 7 9 *10 11 12)
+ACPI: PCI Interrupt Link [LNKG] (IRQs 3 4 5 *6 7 9 10 11 12)
+ACPI: PCI Interrupt Link [LNKH] (IRQs 3 4 5 6 7 9 10 11 12) *0, disabled.
+Linux Plug and Play Support v0.97
+usbcore: registered new driver usbfs
+usbcore: registered new driver hub
+PCI: Using ACPI for IRQ routing
+ACPI: PCI interrupt 0000:00:01.0[A] -> GSI 16 (level, low) -> IRQ 169
+ACPI: PCI interrupt 0000:00:1c.0[A] -> GSI 21 (level, low) -> IRQ 177
+ACPI: PCI interrupt 0000:00:1c.4[B] -> GSI 22 (level, low) -> IRQ 185
+ACPI: PCI interrupt 0000:00:1c.5[C] -> GSI 23 (level, low) -> IRQ 193
+ACPI: PCI interrupt 0000:00:1d.0[A] -> GSI 20 (level, low) -> IRQ 201
+ACPI: PCI interrupt 0000:00:1d.1[B] -> GSI 21 (level, low) -> IRQ 177
+ACPI: PCI interrupt 0000:00:1d.2[C] -> GSI 22 (level, low) -> IRQ 185
+ACPI: PCI interrupt 0000:00:1d.7[A] -> GSI 20 (level, low) -> IRQ 201
+ACPI: PCI interrupt 0000:00:1f.1[A]: no GSI - using IRQ 0
+ACPI: PCI interrupt 0000:00:1f.3[B]: no GSI - using IRQ 0
+ACPI: PCI interrupt 0000:03:02.0[A] -> GSI 35 (level, low) -> IRQ 209
+ACPI: PCI interrupt 0000:04:00.0[A] -> GSI 16 (level, low) -> IRQ 169
+ACPI: PCI interrupt 0000:05:00.0[A] -> GSI 17 (level, low) -> IRQ 217
+apm: BIOS not found.
+audit: initializing netlink socket (disabled)
+audit(1216051422.690:1): initialized
+highmem bounce pool size: 64 pages
+Total HugeTLB memory allocated, 0
+VFS: Disk quotas dquot_6.5.1
+Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+SELinux:  Registering netfilter hooks
+Initializing Cryptographic API
+ksign: Installing public key data
+Loading keyring
+- Added public key 1D846148DE22BD48
+- User ID: CentOS (Kernel Module GPG key)
+pci_hotplug: PCI Hot Plug PCI Core version: 0.5
+ACPI: Processor [CPU0] (supports C1)
+ACPI: Processor [CPU1] (supports C1)
+Real Time Clock Driver v1.12
+Linux agpgart interface v0.100
+Failed to disable AUX port, but continuing anyway... Is this a SiS?
+If AUX port is really absent please use the 'i8042.noaux' option.
+serio: i8042 AUX port at 0x60,0x64 irq 12
+serio: i8042 KBD port at 0x60,0x64 irq 1
+Serial: 8250/16550 driver $Revision: 1.90 $ 8 ports, IRQ sharing enabled
+ttyS0 at I/O 0x3f8 (irq = 4) is a 16550A
+RAMDISK driver initialized: 16 RAM disks of 16384K size 1024 blocksize
+divert: not allocating divert_blk for non-ethernet device lo
+Uniform Multi-Platform E-IDE driver Revision: 7.00alpha2
+ide: Assuming 33MHz system bus speed for PIO modes; override with idebus=xx
+ICH7: IDE controller at PCI slot 0000:00:1f.1
+ACPI: PCI interrupt 0000:00:1f.1[A]: no GSI - using IRQ 0
+ICH7: chipset revision 1
+ICH7: not 100% native mode: will probe irqs later
+    ide0: BM-DMA at 0xfc00-0xfc07, BIOS settings: hda:DMA, hdb:pio
+Probing IDE interface ide0...
+hda: HL-DT-ST DVD-ROM GDR-8084N, ATAPI CD/DVD-ROM drive
+Using cfq io scheduler
+ide0 at 0x1f0-0x1f7,0x3f6 on irq 14
+Probing IDE interface ide1...
+Probing IDE interface ide2...
+Probing IDE interface ide3...
+Probing IDE interface ide4...
+Probing IDE interface ide5...
+hda: ATAPI 24X DVD-ROM drive, 2048kB Cache, UDMA(33)
+Uniform CD-ROM driver Revision: 3.20
+ide-floppy driver 0.99.newide
+usbcore: registered new driver hiddev
+usbcore: registered new driver usbhid
+drivers/usb/input/hid-core.c: v2.0:USB HID core driver
+mice: PS/2 mouse device common for all mice
+input: AT Translated Set 2 keyboard on isa0060/serio0
+input: PS/2 Generic Mouse on isa0060/serio1
+md: md driver 0.90.0 MAX_MD_DEVS=256, MD_SB_DISKS=27
+NET: Registered protocol family 2
+IP: routing cache hash table of 32768 buckets, 512Kbytes
+TCP: Hash tables configured (established 262144 bind 43690)
+Initializing IPsec netlink socket
+NET: Registered protocol family 1
+NET: Registered protocol family 17
+ACPI: (supports S0 S4 S5)
+ACPI wakeup devices: 
+PCI0 PES1 PEP0 PXHA PEP1 PEP2 PCIS 
+Freeing unused kernel memory: 180k freed
+SCSI subsystem initialized
+Adaptec aacraid driver (1.1-5[2412])
+ACPI: PCI interrupt 0000:03:02.0[A] -> GSI 35 (level, low) -> IRQ 209
+aacraid0: kernel 4.1-0[7417] 
+aacraid0: monitor 4.1-0[7417]
+aacraid0: bios 4.1-0[7417]
+aacraid0: serial 15b54
+scsi0 : aacraid
+  Vendor: CERC      Model: DATA 1            Rev: V1.0
+  Type:   Direct-Access                      ANSI SCSI revision: 02
+SCSI device sda: 312432384 512-byte hdwr sectors (159965 MB)
+sda: Write Protect is off
+sda: Mode Sense: 03 00 00 00
+SCSI device sda: drive cache: write through
+SCSI device sda: 312432384 512-byte hdwr sectors (159965 MB)
+sda: Write Protect is off
+sda: Mode Sense: 03 00 00 00
+SCSI device sda: drive cache: write through
+ sda: sda1 sda2 sda3 sda4 < sda5 >
+Attached scsi removable disk sda at scsi0, channel 0, id 0, lun 0
+device-mapper: 4.5.0-ioctl (2005-10-04) initialised: dm-devel@redhat.com
+cdrom: open failed.
+EXT3-fs: INFO: recovery required on readonly filesystem.
+EXT3-fs: write access will be enabled during recovery.
+kjournald starting.  Commit interval 5 seconds
+EXT3-fs: dm-0: orphan cleanup on readonly fs
+ext3_orphan_cleanup: deleting unreferenced inode 5849235
+ext3_orphan_cleanup: deleting unreferenced inode 5849176
+ext3_orphan_cleanup: deleting unreferenced inode 5849164
+ext3_orphan_cleanup: deleting unreferenced inode 5849152
+ext3_orphan_cleanup: deleting unreferenced inode 5849150
+ext3_orphan_cleanup: deleting unreferenced inode 5849142
+ext3_orphan_cleanup: deleting unreferenced inode 5849141
+ext3_orphan_cleanup: deleting unreferenced inode 5849140
+ext3_orphan_cleanup: deleting unreferenced inode 5849139
+ext3_orphan_cleanup: deleting unreferenced inode 5849138
+ext3_orphan_cleanup: deleting unreferenced inode 5849137
+EXT3-fs: dm-0: 11 orphan inodes deleted
+EXT3-fs: recovery complete.
+EXT3-fs: mounted filesystem with ordered data mode.
+SELinux:  Disabled at runtime.
+SELinux:  Unregistering netfilter hooks
+inserting floppy driver for 2.6.9-34.0.2.ELsmp
+Floppy drive(s): fd0 is 1.44M
+floppy0: no floppy controllers found
+tg3.c:v3.43-rh (Oct 24, 2005)
+ACPI: PCI interrupt 0000:04:00.0[A] -> GSI 16 (level, low) -> IRQ 169
+PCI: Setting latency timer of device 0000:04:00.0 to 64
+divert: allocating divert_blk for eth0
+eth0: Tigon3 [partno(BCM95721) rev 4101 PHY(5750)] (PCI Express) 10/100/1000BaseT Ethernet 00:15:c5:e0:b8:65
+eth0: RXcsums[1] LinkChgREG[1] MIirq[1] ASF[1] Split[0] WireSpeed[1] TSOcap[1] 
+eth0: dma_rwctrl[76180000]
+ACPI: PCI interrupt 0000:05:00.0[A] -> GSI 17 (level, low) -> IRQ 217
+PCI: Setting latency timer of device 0000:05:00.0 to 64
+divert: allocating divert_blk for eth1
+eth1: Tigon3 [partno(BCM95721) rev 4101 PHY(5750)] (PCI Express) 10/100/1000BaseT Ethernet 00:15:c5:e0:b8:66
+eth1: RXcsums[1] LinkChgREG[1] MIirq[1] ASF[1] Split[0] WireSpeed[1] TSOcap[1] 
+eth1: dma_rwctrl[76180000]
+Evaluate _OSC Set fails. Status = 0x0005
+pciehp: Both _OSC and OSHP methods do not exist
+hw_random: RNG not detected
+Evaluate _OSC Set fails. Status = 0x0005
+pciehp: Both _OSC and OSHP methods do not exist
+Evaluate _OSC Set fails. Status = 0x0005
+pciehp: Both _OSC and OSHP methods do not exist
+Evaluate _OSC Set fails. Status = 0x0005
+pciehp: Both _OSC and OSHP methods do not exist
+Evaluate _OSC Set fails. Status = 0x0005
+pciehp: Both _OSC and OSHP methods do not exist
+ACPI: PCI interrupt 0000:00:1d.7[A] -> GSI 20 (level, low) -> IRQ 201
+ehci_hcd 0000:00:1d.7: EHCI Host Controller
+PCI: Setting latency timer of device 0000:00:1d.7 to 64
+ehci_hcd 0000:00:1d.7: irq 201, pci mem f8838000
+ehci_hcd 0000:00:1d.7: new USB bus registered, assigned bus number 1
+PCI: cache line size of 128 is not supported by device 0000:00:1d.7
+ehci_hcd 0000:00:1d.7: USB 2.0 enabled, EHCI 1.00, driver 2004-May-10
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 6 ports detected
+ip_tables:
+USB Universal Host Controller Interface driver v2.2
+ACPI: PCI interrupt 0000:00:1d.0[A] -> GSI 20 (level, low) -> IRQ 201
+uhci_hcd 0000:00:1d.0: UHCI Host Controller
+PCI: Setting latency timer of device 0000:00:1d.0 to 64
+uhci_hcd 0000:00:1d.0: irq 201, io base 0000bce0
+uhci_hcd 0000:00:1d.0: new USB bus registered, assigned bus number 2
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 2 ports detected
+ACPI: PCI interrupt 0000:00:1d.1[B] -> GSI 21 (level, low) -> IRQ 177
+uhci_hcd 0000:00:1d.1: UHCI Host Controller
+PCI: Setting latency timer of device 0000:00:1d.1 to 64
+uhci_hcd 0000:00:1d.1: irq 177, io base 0000bcc0
+uhci_hcd 0000:00:1d.1: new USB bus registered, assigned bus number 3
+hub 3-0:1.0: USB hub found
+hub 3-0:1.0: 2 ports detected
+ACPI: PCI interrupt 0000:00:1d.2[C] -> GSI 22 (level, low) -> IRQ 185
+uhci_hcd 0000:00:1d.2: UHCI Host Controller
+PCI: Setting latency timer of device 0000:00:1d.2 to 64
+uhci_hcd 0000:00:1d.2: irq 185, io base 0000bca0
+uhci_hcd 0000:00:1d.2: new USB bus registered, assigned bus number 4
+hub 4-0:1.0: USB hub found
+hub 4-0:1.0: 2 ports detected
+md: Autodetecting RAID arrays.
+md: autorun ...
+md: ... autorun DONE.
+usb 3-1: new low speed USB device using address 2
+usb 4-2: new low speed USB device using address 2
+input: USB HID v1.10 Keyboard [Avocent Avocent USBIAC] on usb-0000:00:1d.2-2
+input: USB HID v1.10 Mouse [Avocent Avocent USBIAC] on usb-0000:00:1d.2-2
+tg3: eth0: Link is up at 100 Mbps, full duplex.
+tg3: eth0: Flow control is off for TX and off for RX.
+ACPI: Power Button (FF) [PWRF]
+EXT3 FS on dm-0, internal journal
+cdrom: open failed.
+kjournald starting.  Commit interval 5 seconds
+EXT3 FS on sda3, internal journal
+EXT3-fs: mounted filesystem with ordered data mode.
+Adding 2031608k swap on /dev/VolGroup00/LogVol01.  Priority:-1 extents:1
+IA-32 Microcode Update Driver: v1.14 <tigran@veritas.com>
+microcode: No new microdata for cpu 1
+microcode: No new microdata for cpu 0
+IA-32 Microcode Update Driver v1.14 unregistered
+ip_tables:
+ip_tables:
+i2c /dev entries driver
+NET: Registered protocol family 10
+Disabled Privacy Extensions on device c0342040(lo)
+IPv6 over IPv4 tunneling driver
+divert: not allocating divert_blk for non-ethernet device sit0
+Installing knfsd
+eth0: no IPv6 routers present
+vmmon: module license 'unspecified' taints kernel.
+/dev/vmmon[4034]: Module vmmon: registered with major=10 minor=165
+/dev/vmmon[4034]: Module vmmon: initialized
+/dev/vmnet: open called by PID 4076 (vmnet-bridge)
+/dev/vmnet: hub 0 does not exist, allocating memory.
+/dev/vmnet: port on hub 0 successfully opened
+bridge-eth0: enabling the bridge
+bridge-eth0: up
+bridge-eth0: already up
+bridge-eth0: attached
+/dev/vmnet: open called by PID 4088 (vmnet-netifup)
+/dev/vmnet: open called by PID 4092 (vmnet-netifup)
+/dev/vmnet: hub 8 does not exist, allocating memory.
+/dev/vmnet: port on hub 8 successfully opened
+divert: allocating divert_blk for vmnet8
+/dev/vmnet: hub 1 does not exist, allocating memory.
+/dev/vmnet: port on hub 1 successfully opened
+divert: allocating divert_blk for vmnet1
+/dev/vmnet: open called by PID 4090 (vmnet-natd)
+/dev/vmnet: port on hub 8 successfully opened
+/dev/vmnet: open called by PID 4116 (vmnet-dhcpd)
+/dev/vmnet: port on hub 8 successfully opened
+/dev/vmnet: open called by PID 4115 (vmnet-dhcpd)
+/dev/vmnet: port on hub 1 successfully opened
+/dev/vmnet: open called by PID 4396 (vmware-vmx)
+device eth0 entered promiscuous mode
+bridge-eth0: enabled promiscuous mode
+/dev/vmnet: port on hub 0 successfully opened
+/dev/vmmon[4408]: host clock rate change request 0 -> 19
+vmnet8: no IPv6 routers present
+vmnet1: no IPv6 routers present
+/dev/vmmon[4408]: host clock rate change request 19 -> 1001
+/dev/vmmon[4408]: host clock rate change request 1001 -> 2005
+/dev/vmmon[4408]: host clock rate change request 2005 -> 2006
+/dev/vmmon[4408]: host clock rate change request 2006 -> 2005
+/dev/vmnet: open called by PID 4548 (vmware-vmx)
+/dev/vmnet: port on hub 0 successfully opened
+/dev/vmnet: open called by PID 4563 (vmware-vmx)
+/dev/vmnet: port on hub 0 successfully opened
+/dev/vmnet: open called by PID 4578 (vmware-vmx)
+/dev/vmnet: port on hub 0 successfully opened
+/dev/vmmon[4588]: host clock rate change request 2005 -> 3001
+/dev/vmmon[4588]: host clock rate change request 3001 -> 2019
+tg3: eth0: Link is down.
+tg3: eth0: Link is up at 1000 Mbps, full duplex.
+tg3: eth0: Flow control is off for TX and off for RX.
+svc: unknown version (0)
+Clock: inserting leap second 23:59:60 UTC
+tg3: eth0: Link is down.
+tg3: eth0: Link is up at 1000 Mbps, full duplex.
+tg3: eth0: Flow control is off for TX and off for RX.

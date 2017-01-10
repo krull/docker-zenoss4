@@ -1,0 +1,323 @@
+<tal:block metal:use-macro="here/templates/macros/page2">
+<tal:block metal:fill-slot="contentPane"
+    tal:define="editable python:here.isManager">
+
+<form method="POST" enctype="multipart/form-data"
+    tal:attributes="action string:${here/absolute_url_path}">
+    <input type="hidden" name="zenScreenName" 
+        tal:attributes="value template/id" /> 
+
+
+        <tal:block tal:define="message request/message | string:State at time:; 
+            tabletitle string:${message} ${here/getNowString}">
+        <tal:block metal:use-macro="here/zenuimacros/macros/zentable">
+
+        <!--====Optional titlebar slots=============
+
+            <tal:block metal:fill-slot="filterslot">
+            </tal:block>
+
+            <tal:block metal:fill-slot="menuslot">
+            </tal:block>
+
+            ==========================================-->
+
+        <tal:block metal:fill-slot="zentablecontents">
+        <!-- BEGIN TABLE CONTENTS -->
+            
+    <tr>
+        <td class="tableheader">Name</td>
+        <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="newId" size="40"
+                tal:attributes="value here/id" />
+        </td>
+        <td class="tablevalues" tal:condition="not:editable"
+            tal:content="here/id"/>
+    </tr>
+    <tr>
+      <td class="tableheader">Source Type</td>
+	  <td class="tablevalues" tal:content="here/sourcetype"></td>
+    </tr>
+    <tr>
+        <td class="tableheader">Enabled</td>
+        <td class="tablevalues" tal:condition="editable">
+        <select class="tablevalues" name="enabled:boolean">
+            <option tal:repeat="e python:(True,False)" tal:content="e"
+                    tal:attributes="value e; selected python:e==here.enabled"/>
+        </select>
+        </td>
+        <td class="tablevalues" tal:condition="not:editable" 
+            tal:content="here/enabled"/>
+    </tr>
+
+    <tr>
+            <td class="tableheader">Component</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="component" size="50"
+                tal:attributes="value here/component" />
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/component"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Event Class</td>
+            <td class="tablevalues" tal:condition="editable">
+            <select class="tablevalues" name="eventClass">
+                <option tal:repeat="evtcls here/getEventClassNames" 
+                        tal:content="evtcls"
+                        tal:attributes="selected python:evtcls==here.eventClass"/>
+            </select>
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/eventClass"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Event Key</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="eventKey" size="50"
+                tal:attributes="value here/eventKey" />
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/eventKey"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Severity</td>
+            <td class="tablevalues" tal:condition="editable">
+            <select class="tablevalues" name="severity:int">
+               <option tal:repeat="sev here/ZenEventManager/getSeverities"
+                       tal:content="python:sev[0]"
+                       tal:attributes="selected python:sev[1]==here.severity; value python:sev[1]"/>
+            </select>
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/getSeverityString"/>
+        </tr>
+
+        <tr><td class="tableheader" colspan="3">Connection and Metadata Information</td></tr>
+        <tr>
+            <td class="tableheader">Management Port</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="jmxPort:string" size="10"
+                tal:attributes="value here/jmxPort" />
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/jmxPort"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Protocol</td>
+            <td class="tablevalues" tal:condition="editable">
+            <select class="tablevalues" name="jmxProtocol:string">
+               <option tal:repeat="protocol here/getProtocols"
+                     tal:content="python:protocol"
+                     tal:attributes="selected python:protocol==here.jmxProtocol; value python:protocol"/>
+            </select>
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/jmxProtocol"/>
+        </tr>
+        <tr>
+            <td class="tableheader">RMI Context (URL context when using RMI protocol)</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="rmiContext:string" size="50"
+                tal:attributes="value here/rmiContext" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/rmiContext"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Raw Service URL (advanced users only)</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="jmxRawService:string" size="50"
+                tal:attributes="value here/jmxRawService" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/jmxRawService"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Object Name</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="objectName:string" size="50"
+                tal:attributes="value here/objectName" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/objectName"/>
+        </tr>
+
+        <tr><td class="tableheader" colspan="3">Remote Authentication Information</td></tr>
+
+        <tr>
+            <td class="tableheader">Auth Enabled</td>
+            <td class="tablevalues" tal:condition="editable">
+              <select class="tablevalues" name="authenticate:boolean">
+                <option tal:repeat="val python:(True,False)" tal:content="val"
+                        tal:attributes="value val; selected python:here.authenticate==val"/>
+              </select>
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/authenticate"/>
+        </tr>
+
+        <tr>
+            <td class="tableheader">User Name</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="username:string" size="20"
+                tal:attributes="value here/username" />
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/username"/>
+        </tr>
+        <tr>
+            <td class="tableheader">Password</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="password:string" size="20"
+                tal:attributes="value here/password" />
+            </td>
+          <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/password"/>
+        </tr>
+
+        <tr><td class="tableheader" colspan="3">Attribute and Operation Configuration</td></tr>
+
+
+        <tr>
+            <td class="tableheader">Attribute Name</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="attributeName:string" size="50"
+                tal:attributes="value here/attributeName" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/attributeName"/>
+        </tr>
+
+        <tr>
+            <td class="tableheader">Attribute Path</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="attributePath:string" size="50"
+                tal:attributes="value here/attributePath" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/attributePath"/>
+        </tr>
+
+
+        <tr>
+            <td class="tableheader">Operation Name</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="operationName:string" size="50"
+                tal:attributes="value here/operationName" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/operationName"/>
+        </tr>
+
+        <tr>
+            <td class="tableheader">Parameter Values</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="operationParamValues:string" size="50"
+                tal:attributes="value here/operationParamValues" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/operationParamValues"/>
+        </tr>
+
+        <tr>
+            <td class="tableheader">Parameter Types</td>
+            <td class="tablevalues" tal:condition="editable">
+            <input class="tablevalues" type="text" name="operationParamTypes:string" size="50"
+                tal:attributes="value here/operationParamTypes" />
+            </td>
+            <td class="tablevalues" tal:condition="not:editable" 
+                tal:content="here/operationParamTypes"/>
+        </tr>
+
+
+
+    <tr>
+        <td class=tableheader align="left" >
+        </td>
+        <td align="left"  class="tableheader" colspan=3>
+            <input class="tableheader" type="submit" value=" Save "
+                name="zmanage_editProperties:method"/>
+        </td>
+    </tr>
+
+        <!-- END TABLE CONTENTS -->
+
+        </tal:block>
+        </tal:block>
+        </tal:block>
+        
+
+</form>
+
+
+<!----------------------------------------------------------------->
+
+<form method="post" tal:attributes="action here/absolute_url_path">
+
+
+        <tal:block tal:define="tableName string:rrdtempdplist; 
+        objects here/datapoints;
+        batch python:here.ZenTableManager.getBatch(tableName,objects);
+		tabletitle string:DataPoints;
+		menu_id string:DataPoint_list;">
+        <tal:block metal:use-macro="here/zenuimacros/macros/zentable">
+
+        <!--====Optional titlebar slots=============
+
+            <tal:block metal:fill-slot="filterslot">
+            </tal:block>
+
+            <tal:block metal:fill-slot="menuslot">
+            </tal:block>
+
+            ==========================================-->
+
+        <tal:block metal:fill-slot="zentablecontents">
+        <!-- BEGIN TABLE CONTENTS -->
+            
+    
+    <tr>
+        <th tal:replace="structure python:here.ZenTableManager.getTableHeader(
+                    tableName,'getId','Name')"/>
+        <th tal:replace="structure python:here.ZenTableManager.getTableHeader(
+                    tableName,'rrdtype','Type')"/>
+    </tr>
+    <tr class="tablevalues" tal:repeat="dp batch">
+        <td>
+            <input tal:condition="editable" 
+                type="checkbox" name="ids:list" 
+                tal:attributes="value dp/id"/>
+            <a tal:condition="editable"
+                tal:attributes="href dp/getPrimaryUrlPath" 
+                tal:content="dp/id">name</a>
+            <tal:block tal:condition="not:editable" tal:content="dp/getId"/>
+        </td>
+        <td tal:content="dp/rrdtype"/>
+    </tr>
+    <tr>
+        <td colspan="4" class="tableheader">
+            <span metal:use-macro="here/zenTableNavigation/macros/navbody"/>
+        </td>
+    </tr>
+    <tr class="tableheader" tal:condition="editable">
+        <td colspan="4">
+        <input class="tableheader" type="submit"
+                name="SelectButton" value="Select All" 
+                onClick="toggleSelect(this.form);return false"/>
+        </td>
+    </tr>
+    <input type='hidden' name='tableName' tal:attributes="value tableName" />
+
+        <!-- END TABLE CONTENTS -->
+
+        </tal:block>
+        </tal:block>
+        </tal:block>
+        
+
+</form>
+
+<!----------------------------------------------------------------->
+</tal:block>
+</tal:block>

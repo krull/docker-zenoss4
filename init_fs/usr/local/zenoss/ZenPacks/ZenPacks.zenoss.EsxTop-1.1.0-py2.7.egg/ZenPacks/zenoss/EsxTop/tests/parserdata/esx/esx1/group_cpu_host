@@ -1,0 +1,29 @@
+check_esxtop --statCategory='Group Cpu' --component=host
+Members	0
+Used	0.00
+Run	0.00
+System	0.00
+Wait	0.00
+Ready	0.00
+Idle	0.00
+Overlap	0.00
+CoStop	0.00
+Max Limited	0.00
+Swap Wait	0.00
+Switches_sec	0.00
+Migrates_sec	0.00
+Processor Migrations_sec	0.00
+Wakeup Migrate Idle_sec	0.00
+Quantum Expires_sec	0.00
+Wakeups_sec	0.00
+Alloc Min	0
+Alloc Max	0
+Alloc Shares	0
+Alloc Min Limited	0
+CPU Latency	0.00
+Memory Latency	0.00
+Demand	0
+Effective Min (MHz)	0
+Timers_sec	0.00
+Power Usage Watts	0
+

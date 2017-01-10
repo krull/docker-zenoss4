@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.ZenJMX = ZenPacks.zenoss.ZenJMX
+

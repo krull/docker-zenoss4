@@ -1,0 +1,34 @@
+check_esxtop --statCategory='Memory'
+
+Memory Overcommit (1 Minute Avg)	0.01
+Memory Overcommit (5 Minute Avg)	0.01
+Memory Overcommit (15 Minute Avg)	0.01
+Machine MBytes	32763
+Console MBytes	500
+Kernel MBytes	724
+NonKernel MBytes	26660
+Free MBytes	4878
+Kernel Managed MBytes	31798
+Kernel MinFree MBytes	1907
+Kernel Reserved MBytes	4153
+Kernel Unreserved MBytes	27186
+Kernel State	0
+Free MBytes	57
+Swap Total MBytes	996
+Swap Free MBytes	996
+Swap MBytes Read_sec	0.00
+Swap MBytes Write_sec	0.00
+PShare Shared MBytes	3744
+PShare Common MBytes	2080
+PShare Savings MBytes	1664
+Swap Used MBytes	0
+Swap Target MBytes	0
+Swap MBytes Read_sec	0.00
+Swap MBytes Write_sec	0.00
+Total Compressed MBytes	0
+Total Saved By Compression MBytes	0
+Memctl Current MBytes	0
+Memctl Target MBytes	0
+Memctl Max MBytes	16115
+
+

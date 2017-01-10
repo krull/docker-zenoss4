@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.DigMonitor = ZenPacks.zenoss.DigMonitor
+

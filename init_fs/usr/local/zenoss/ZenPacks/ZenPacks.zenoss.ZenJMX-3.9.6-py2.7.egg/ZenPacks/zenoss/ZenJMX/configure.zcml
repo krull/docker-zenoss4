@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter factory=".info.JMXDataSourceInfo"
+           for=".datasources.JMXDataSource.JMXDataSource"
+           provides=".interfaces.IJMXDataSourceInfo"
+           />
+  
+  <utility provides="zope.schema.interfaces.IVocabularyFactory"
+           component=".info.jmxProtocolVocabulary"
+           name="jmxProtocolVocabulary"
+           />
+  
+</configure>

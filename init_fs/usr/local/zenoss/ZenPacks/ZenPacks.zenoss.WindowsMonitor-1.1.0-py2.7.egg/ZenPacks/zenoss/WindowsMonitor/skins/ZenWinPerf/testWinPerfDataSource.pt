@@ -1,0 +1,58 @@
+<tal:block metal:use-macro="here/templates/macros/page2">
+<tal:block metal:fill-slot="contentPane"
+    tal:define="editable python:here.isManager">
+
+<form method="get" enctype="multipart/form-data"
+    tal:attributes="action string:${here/absolute_url_path}">
+    <input type="hidden" name="zenScreenName" 
+        tal:attributes="value template/id" /> 
+
+
+        <tal:block tal:define="message request/message | string:State at time:; 
+            tabletitle string:${message} ${here/getNowString}">
+        <tal:block metal:use-macro="here/zenuimacros/macros/zentable">
+
+        <!--====Optional titlebar slots=============
+
+            <tal:block metal:fill-slot="filterslot">
+            </tal:block>
+
+            <tal:block metal:fill-slot="menuslot">
+            </tal:block>
+
+            ==========================================-->
+
+        <tal:block metal:fill-slot="zentablecontents">
+        <!-- BEGIN TABLE CONTENTS -->
+            
+    <tr>
+        <td class="tableheader">Name</td>
+        <td class="tablevalues"
+            tal:content="here/id"/>
+    </tr>
+    <tr>
+        <td class="tableheader">counter</td>
+        <td class="tablevalues" tal:content="here/counter"/>
+    </tr>
+    <tr>
+        <td class="tableheader">Test Device</td>
+        <td class="tablevalues">
+        <input class="tablevalues" type="text" 
+            name="testDevice:string" size="40" /> 
+        <input class="tablevalues" type="submit" value=" Test "
+            name="manage_testDataSource:method"/>
+        </td>
+    </tr>
+
+        <!-- END TABLE CONTENTS -->
+
+        </tal:block>
+        </tal:block>
+        </tal:block>
+        
+
+</form>
+
+
+</tal:block>
+</tal:block>

@@ -1,0 +1,12 @@
+©Sun Microsystems, Inc.
+
+
+
+BY DOWNLOADING, INSTALLING, USING, COPYING OR RUNNING THE JMX Remote API 1.0.1_04 Reference Implementation SOFTWARE (THE “SOFTWARE”), YOU AGREE ON BEHALF OF THE ENTITY UTILIZING THE SOFTWARE (“CUSTOMER” OR “YOU”) THAT: (1) YOU AGREE TO THE FOLLOWING TERMS AND CONDITIONS, WHICH FORM THE AGREEMENT BETWEEN YOU AND ZENOSS, INC. (“ZENOSS” or “US”) (“AGREEMENT”) AND SUCH TERMS AND CONDITIONS GOVERN YOUR LICENSE OF THE SOFTWARE; AND, (2) THAT YOU HAVE AUTHORITY TO BIND THE CUSTOMER. PLEASE READ THIS SUBSCRIPTION AGREEMENT CAREFULLY. IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS DO NOT DOWNLOAD, INSTALL, RUN, COPY OR USE THE SOFTWARE.
+
+Zenoss grants you a limited, non-transferable, terminable, non-exclusive, and non-transferable license for the internal use only for the Software, SUBJECT AT ALL TIMES to the terms of the Sun Microsystems, Inc. (“Sun”) Binary Code License Agreement (the “Sun License”) found at https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=jmx_remote-1.0.1_04-mr-oth-JPR@CDS-CDS_Developer,  including, without limitation the limits of liability, warranty disclaimers and other restrictions on use.
+
+This License will terminate in the event you violate any of the terms of this license or the Sun License.
+
+
+END OF LICENSE

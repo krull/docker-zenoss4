@@ -1,0 +1,649 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Manufacturers', 'HP') -->
+<object id='/zport/dmd/Manufacturers/HP' module='Products.ZenModel.Manufacturer' class='Manufacturer'>
+<property type="string" id="url" mode="w" >
+http://www.hp.com
+</property>
+<tomanycont id='products'>
+<object id='BL20P' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+BL20P
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['BL20P']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Compaq Management Agents' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Compaq Management Agents
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Compaq Management Agents']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Compaq Remote Monitor Service' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Compaq Remote Monitor Service
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Compaq Remote Monitor Service']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Compaq Survey Utility' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Compaq Survey Utility
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Compaq Survey Utility']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='Compaq Version Control Agent 1.0' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+Compaq Version Control Agent 1.0
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['Compaq Version Control Agent 1.0']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Array Configuration Utility' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Array Configuration Utility
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Array Configuration Utility']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Array Configuration Utility CLI' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Array Configuration Utility CLI
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Array Configuration Utility CLI']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Array Configurtion Utility CLI' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Array Configurtion Utility CLI
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Array Configurtion Utility CLI']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Array Diagnostic Utility' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Array Diagnostic Utility
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Array Diagnostic Utility']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP BL' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP BL
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP BL']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Insight Diagnostics Online Edition for Windows' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Insight Diagnostics Online Edition for Windows
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Insight Diagnostics Online Edition for Windows']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Insight Management Agents' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Insight Management Agents
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Insight Management Agents']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Lights-Out Online Configuration Utility' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Lights-Out Online Configuration Utility
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Lights-Out Online Configuration Utility']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP MULTI-ENVIRONMENT' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP MULTI-ENVIRONMENT
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP MULTI-ENVIRONMENT']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP MULTI-ENVIRONMENT,SN_CNBJ190297,FN_F7401V6,SVCID_16336,PID_HP' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP MULTI-ENVIRONMENT,SN:CNBJ190297,FN:F7401V6,SVCID:16336,PID:HP
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP MULTI-ENVIRONMENT,SN:CNBJ190297,FN:F7401V6,SVCID:16336,PID:HP']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Management Agents' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Management Agents
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Management Agents']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Performance Management Pack Data Migration Tool_remove only' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Performance Management Pack Data Migration Tool_remove only
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Performance Management Pack Data Migration Tool(remove only)']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Performance Management Pack _remove only' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Performance Management Pack _remove only
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Performance Management Pack (remove only)']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant IPMI WMI Provider' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant IPMI WMI Provider
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant IPMI WMI Provider']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant Integrated Management Log Viewer' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant Integrated Management Log Viewer
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant Integrated Management Log Viewer']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant Legacy Port Configuration Component' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant Legacy Port Configuration Component
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant Legacy Port Configuration Component']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant Rack Infrastructure Interface Service' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant Rack Infrastructure Interface Service
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant Rack Infrastructure Interface Service']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant Remote Monitor Service' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant Remote Monitor Service
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant Remote Monitor Service']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP ProLiant Smart Array Device Manager Extension' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP ProLiant Smart Array Device Manager Extension
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP ProLiant Smart Array Device Manager Extension']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Protect Your Data' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Protect Your Data
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Protect Your Data']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Smart Array SAS_SATA Event Notification Service' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Smart Array SAS/SATA Event Notification Service
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Smart Array SAS/SATA Event Notification Service']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Software Update' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Software Update
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Software Update']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP System Management Homepage' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP System Management Homepage
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP System Management Homepage']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Systems Insight Manager Data Migration Tool for Insight Mana' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Systems Insight Manager Data Migration Tool for Insight Mana
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Systems Insight Manager Data Migration Tool for Insight Mana']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Systems Insight Manager _remove only' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Systems Insight Manager _remove only
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Systems Insight Manager (remove only)']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Version Control Agent' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Version Control Agent
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Version Control Agent']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Version Control Agent 2.0' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Version Control Agent 2.0
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Version Control Agent 2.0']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Version Control Agent 2.1' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Version Control Agent 2.1
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Version Control Agent 2.1']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Version Control Repository Manager 2.0' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Version Control Repository Manager 2.0
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Version Control Repository Manager 2.0']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='HP Web Jetadmin' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+HP Web Jetadmin
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['HP Web Jetadmin']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant 1600' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant 1600
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant 1600']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant 3000' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant 3000
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant 3000']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant 800' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant 800
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant 800']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant BL p-Class C-GbE2 Interconnect Switch A' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+.1.3.6.1.4.1.11.2.3.7.11.33.1.1.1
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['.1.3.6.1.4.1.11.2.3.7.11.33.1.1.1']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant BL20p G3' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant BL20p G3
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant BL20p G3']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant BL25p G1' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant BL25p G1
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant BL25p G1']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant BL30p G1' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant BL30p G1
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant BL30p G1']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL320 G5 ' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL320 G5 
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL320 G5 ']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL360' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL360
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL360']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL360 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL360 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL360 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL360 G3' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL360 G3
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL360 G3']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL360 G4' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL360 G4
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL360 G4']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL360 G5' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL360 G5
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL360 G5']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL365 G1' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL365 G1
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL365 G1']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL380 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL380 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL380 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL380 G3' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL380 G3
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL380 G3']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL380 G4' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL380 G4
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL380 G4']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL385 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL385 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL385 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL580' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL580
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL580']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL580 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL580 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL580 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant DL580 G3' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant DL580 G3
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant DL580 G3']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant ML330 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant ML330 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant ML330 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+<object id='ProLiant ML370 G2' module='Products.ZenModel.HardwareClass' class='HardwareClass'>
+<property type="string" id="name" mode="w" >
+ProLiant ML370 G2
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['ProLiant ML370 G2']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+</object>
+</tomanycont>
+</object>
+</objects>

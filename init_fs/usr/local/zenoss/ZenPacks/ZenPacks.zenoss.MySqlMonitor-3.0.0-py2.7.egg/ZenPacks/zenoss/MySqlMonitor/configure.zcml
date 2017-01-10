@@ -1,0 +1,72 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser = "http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    >
+
+    <!-- API: Info Adapters -->
+
+    <adapter
+        provides=".MySQLServer.IMySQLServerInfo"
+        for=".MySQLServer.MySQLServer"
+        factory=".MySQLServer.MySQLServerInfo"
+        />
+
+    <adapter
+        provides=".MySQLDatabase.IMySQLDatabaseInfo"
+        for=".MySQLDatabase.MySQLDatabase"
+        factory=".MySQLDatabase.MySQLDatabaseInfo"
+        />
+
+    <adapter factory=".datasources.MySqlMonitorDataSource.MySqlMonitorDataSourceInfo"
+        for=".datasources.MySqlMonitorDataSource.MySqlMonitorDataSource"
+        provides=".datasources.MySqlMonitorDataSource.IMySqlMonitorDataSourceInfo"
+        />
+
+    <!-- Impact -->
+    <configure zcml:condition="installed ZenPacks.zenoss.Impact">
+        <include package="ZenPacks.zenoss.Impact" file="meta.zcml"/>
+
+        <subscriber
+            provides="ZenPacks.zenoss.Impact.impactd.interfaces.IRelationshipDataProvider"
+            for=".MySQLServer.MySQLServer"
+            factory=".impact.MySQLServerRelationsProvider"
+            />
+
+        <subscriber
+            provides="ZenPacks.zenoss.Impact.impactd.interfaces.IRelationshipDataProvider"
+            for=".MySQLDatabase.MySQLDatabase"
+            factory=".impact.MySQLDatabaseRelationsProvider"
+            />
+
+    </configure>
+
+    <!-- Browser Resources -->
+    <browser:resourceDirectory
+        name="ZenPacks_zenoss_MySqlMonitor"
+        directory="resources"
+        />
+
+    <!-- JavaScript needed for all Zenoss pages. -->
+    <browser:viewlet
+        name="js-mysql"
+        paths="/++resource++ZenPacks_zenoss_MySqlMonitor/js/mysql.js"
+        for="*"
+        weight="20"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+    <browser:viewlet
+        name="js-panels"
+        paths="/++resource++ZenPacks_zenoss_MySqlMonitor/js/panels.js"
+        for="Products.ZenModel.Device.Device"
+        weight="20"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+</configure>

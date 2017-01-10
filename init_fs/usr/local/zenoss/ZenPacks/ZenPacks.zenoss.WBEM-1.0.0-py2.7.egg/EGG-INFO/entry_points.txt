@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.WBEM = ZenPacks.zenoss.WBEM
+

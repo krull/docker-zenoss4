@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.Microsoft.Windows = ZenPacks.zenoss.Microsoft.Windows
+

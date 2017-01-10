@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.PySamba = ZenPacks.zenoss.PySamba
+

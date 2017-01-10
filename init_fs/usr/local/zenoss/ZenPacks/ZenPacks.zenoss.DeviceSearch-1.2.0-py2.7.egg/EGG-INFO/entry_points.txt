@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.DeviceSearch = ZenPacks.zenoss.DeviceSearch
+

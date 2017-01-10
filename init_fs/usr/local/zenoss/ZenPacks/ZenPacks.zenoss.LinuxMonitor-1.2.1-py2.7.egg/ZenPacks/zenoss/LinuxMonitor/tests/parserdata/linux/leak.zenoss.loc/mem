@@ -1,0 +1,31 @@
+/bin/cat /proc/meminfo
+MemTotal:      2075652 kB
+MemFree:        720956 kB
+Buffers:        152440 kB
+Cached:         452440 kB
+SwapCached:       5004 kB
+Active:         979400 kB
+Inactive:       276912 kB
+HighTotal:     1179584 kB
+HighFree:       240916 kB
+LowTotal:       896068 kB
+LowFree:        480040 kB
+SwapTotal:     2031608 kB
+SwapFree:      1976128 kB
+Dirty:             184 kB
+Writeback:           0 kB
+AnonPages:      650388 kB
+Mapped:          29060 kB
+Slab:            87892 kB
+PageTables:       3500 kB
+NFS_Unstable:        0 kB
+Bounce:              0 kB
+CommitLimit:   3069432 kB
+Committed_AS:  1142084 kB
+VmallocTotal:   114680 kB
+VmallocUsed:      3704 kB
+VmallocChunk:   110532 kB
+HugePages_Total:     0
+HugePages_Free:      0
+HugePages_Rsvd:      0
+Hugepagesize:     4096 kB

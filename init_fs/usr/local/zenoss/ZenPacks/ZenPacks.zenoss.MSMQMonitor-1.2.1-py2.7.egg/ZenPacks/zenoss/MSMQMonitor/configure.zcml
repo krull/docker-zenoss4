@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    >
+
+    <!-- Provide info for the queue details screen. -->
+    <adapter factory=".info.MSMQQueueInfo"
+        for=".MSMQQueue.MSMQQueue"
+        provides=".interfaces.IMSMQQueueInfo"
+        />
+
+    <!-- Define a place for our zenpack to register javascript. -->
+    <browser:resourceDirectory
+        name="msmq"
+        directory="resources"
+        />
+
+    <!-- Provide columns for queues within the component grid. -->
+    <browser:viewlet
+        name="js-msmq"
+        paths="/++resource++msmq/js/MSMQQueue.js"
+        weight="20"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+</configure>

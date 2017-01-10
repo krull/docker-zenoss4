@@ -1,0 +1,32 @@
+import sys; sys.__plen = len(sys.path)
+./ZenPacks.zenoss.PySamba-1.0.2-py2.7-linux-x86_64.egg/ZenPacks/zenoss/PySamba/lib
+./ZenPacks.zenoss.PySamba-1.0.2-py2.7-linux-x86_64.egg
+./ZenPacks.zenoss.WindowsMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.ActiveDirectory-2.1.0-py2.7.egg
+./ZenPacks.zenoss.IISMonitor-2.0.2-py2.7.egg
+./ZenPacks.zenoss.MSExchange-2.0.4-py2.7.egg
+./ZenPacks.zenoss.MSMQMonitor-1.2.1-py2.7.egg
+./ZenPacks.zenoss.MSSQLServer-2.0.3-py2.7.egg
+./ZenPacks.zenoss.ApacheMonitor-2.1.4-py2.7.egg
+./ZenPacks.zenoss.DellMonitor-2.2.0-py2.7.egg
+./ZenPacks.zenoss.DigMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.DnsMonitor-2.1.0-py2.7.egg
+./ZenPacks.zenoss.FtpMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.HPMonitor-2.1.0-py2.7.egg
+./ZenPacks.zenoss.HttpMonitor-2.1.0-py2.7.egg
+./ZenPacks.zenoss.IRCDMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.JabberMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.LDAPMonitor-1.4.0-py2.7.egg
+./ZenPacks.zenoss.NNTPMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.NtpMonitor-2.2.0-py2.7.egg
+./ZenPacks.zenoss.ZenJMX-3.9.6-py2.7.egg
+./ZenPacks.zenoss.LinuxMonitor-1.2.1-py2.7.egg
+./ZenPacks.zenoss.ZenossVirtualHostMonitor-2.4.0-py2.7.egg
+./ZenPacks.zenoss.EsxTop-1.1.0-py2.7.egg
+./ZenPacks.zenoss.XenMonitor-1.1.0-py2.7.egg
+./ZenPacks.zenoss.DeviceSearch-1.2.0-py2.7.egg
+./ZenPacks.zenoss.PythonCollector-1.2.0-py2.7.egg
+./ZenPacks.zenoss.WBEM-1.0.0-py2.7.egg
+./ZenPacks.zenoss.Microsoft.Windows-2.0.2-py2.7.egg
+./ZenPacks.zenoss.MySqlMonitor-3.0.0-py2.7.egg
+import sys; new=sys.path[sys.__plen:]; del sys.path[sys.__plen:]; p=getattr(sys,'__egginsert',0); sys.path[p:p]=new; sys.__egginsert = p+len(new)

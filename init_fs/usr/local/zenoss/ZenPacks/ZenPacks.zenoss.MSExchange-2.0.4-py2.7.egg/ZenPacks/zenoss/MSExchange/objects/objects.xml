@@ -1,0 +1,1854 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Server', 'Windows', 'WMI', 'MSExchange') -->
+<object id='/zport/dmd/Devices/Server/Windows/WMI/MSExchange' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property visible="True" type="lines" id="zDeviceTemplates" >
+['Device_WMI', 'MSExchangeIS']
+</property>
+<tomanycont id='rrdTemplates'>
+<object id='MSExchangeIS' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Information Store
+</property>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='mseisMailboxFolderOpensPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Folder opens/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxFolderOpensPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisMailboxLocalDeliveryRate' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Local delivery rate
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxLocalDeliveryRate' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisMailboxMessageOpensPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Message Opens/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxMessageOpensPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCAveragedLatency' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Averaged Latency
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCAveragedLatency' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCOperationsPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Operations/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCOperationsPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCRequests' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Requests
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='smtpServerLocalQueueLength' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\SMTP Server(_Total)\Local Queue Length
+</property>
+<tomanycont id='datapoints'>
+<object id='smtpServerLocalQueueLength' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='smtpServerMessagesDeliveredPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\SMTP Server(_Total)\Messages Delivered/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='smtpServerMessagesDeliveredPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphs'>
+<object id='mseisVMLargestBlockSize' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMLargestBlockSize_mseisVMLargestBlockSize']
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+block size
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotal16MBFreeBlocks' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotal16MBFreeBlocks_mseisVMTotal16MBFreeBlocks']
+</property>
+<property type="int" id="sequence" mode="w" >
+1
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+blocks
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotalFreeBlocks' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotalFreeBlocks_mseisVMTotalFreeBlocks']
+</property>
+<property type="int" id="sequence" mode="w" >
+2
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+blocks
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotalLargeFreeBlockBytes' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotalLargeFreeBlockBytes_mseisVMTotalLargeFreeBlockBytes']
+</property>
+<property type="int" id="sequence" mode="w" >
+3
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+bytes
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='Exchange - Mailbox Operations' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+operations/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='mseisMailboxFolderOpensPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Folder Opens
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxFolderOpensPerSec_mseisMailboxFolderOpensPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisMailboxLocalDeliveryRate' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Local Deliveries
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxLocalDeliveryRate_mseisMailboxLocalDeliveryRate
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisMailboxMessageOpensPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Message Opens
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxMessageOpensPerSec_mseisMailboxMessageOpensPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Exchange - RPC Operations' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+operations/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='mseisRPCAveragedLatency' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Average Latency
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCAveragedLatency_mseisRPCAveragedLatency
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisRPCOperationsPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+RPC Operations
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCOperationsPerSec_mseisRPCOperationsPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisRPCRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+RPC Requests
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCRequests_mseisRPCRequests
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='SMTP Server - Local Queue Length' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='smtpServerLocalQueueLength' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%8.0lf
+</property>
+<property type="string" id="legend" mode="w" >
+Queued Messages
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+smtpServerLocalQueueLength_smtpServerLocalQueueLength
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='SMTP Server - Message Delivery Rate' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<tomanycont id='graphPoints'>
+<object id='smtpServerMessagesDeliveredPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Delivered Messages
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+smtpServerMessagesDeliveredPerSec_smtpServerMessagesDeliveredPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<object id='2007' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property visible="True" type="lines" id="zDeviceTemplates" >
+['Device_WMI', 'MSExchangeIS']
+</property>
+<tomanycont id='rrdTemplates'>
+<object id='MSExchangeIS' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Information Store
+</property>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='activeMailboxDeliveryQueueLength' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeTransport Queues(_Total)\Active Mailbox Delivery Queue Length
+</property>
+<tomanycont id='datapoints'>
+<object id='activeMailboxDeliveryQueueLength' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='messagesCompletedDeliveryPerSecond' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeTransport Queues(_Total)\Messages Completed Delivery Per Second
+</property>
+<tomanycont id='datapoints'>
+<object id='messagesCompletedDeliveryPerSecond' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisMailboxFolderOpensPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Folder opens/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxFolderOpensPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisMailboxLocalDeliveryRate' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Local delivery rate
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxLocalDeliveryRate' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisMailboxMessageOpensPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS Mailbox(_Total)\Message Opens/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisMailboxMessageOpensPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCAveragedLatency' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Averaged Latency
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCAveragedLatency' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCOperationsPerSec' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Operations/sec
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCOperationsPerSec' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mseisRPCRequests' module='ZenPacks.zenoss.WindowsMonitor.datasources.WinPerfDataSource' class='WinPerfDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+WinPerf
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="counter" mode="w" >
+\MSExchangeIS\RPC Requests
+</property>
+<tomanycont id='datapoints'>
+<object id='mseisRPCRequests' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphs'>
+<object id='mseisVMLargestBlockSize' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMLargestBlockSize_mseisVMLargestBlockSize']
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+block size
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotal16MBFreeBlocks' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotal16MBFreeBlocks_mseisVMTotal16MBFreeBlocks']
+</property>
+<property type="int" id="sequence" mode="w" >
+1
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+blocks
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotalFreeBlocks' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotalFreeBlocks_mseisVMTotalFreeBlocks']
+</property>
+<property type="int" id="sequence" mode="w" >
+2
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+blocks
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+<object id='mseisVMTotalLargeFreeBlockBytes' module='Products.ZenModel.RRDGraph' class='RRDGraph'>
+<property type="lines" id="dsnames" mode="w" >
+['mseisVMTotalLargeFreeBlockBytes_mseisVMTotalLargeFreeBlockBytes']
+</property>
+<property type="int" id="sequence" mode="w" >
+3
+</property>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+bytes
+</property>
+<property type="int" id="linewidth" mode="w" >
+1
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="boolean" id="summary" mode="w" >
+True
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="lines" id="colors" mode="w" >
+('#00cc00', '#0000ff', '#00ffff', '#ff0000', '#ffff00', '#cc0000', '#0000cc', '#0080c0', '#8080c0', '#ff0080', '#800080', '#0000a0', '#408080', '#808000', '#000000', '#00ff00', '#fb31fb', '#0080ff', '#ff8000', '#800000')
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='Active Mailbox Queue Length' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='Active Mailbox Delivery Queue Length' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Active Mailbox Delivery Queue Length
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+activeMailboxDeliveryQueueLength_activeMailboxDeliveryQueueLength
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Exchange - Mailbox Operations' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+operations/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='mseisMailboxFolderOpensPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Folder Opens
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxFolderOpensPerSec_mseisMailboxFolderOpensPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisMailboxLocalDeliveryRate' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Local Deliveries
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxLocalDeliveryRate_mseisMailboxLocalDeliveryRate
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisMailboxMessageOpensPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Message Opens
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisMailboxMessageOpensPerSec_mseisMailboxMessageOpensPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Exchange - RPC Operations' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+operations/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='mseisRPCAveragedLatency' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+Average Latency
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCAveragedLatency_mseisRPCAveragedLatency
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisRPCOperationsPerSec' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+RPC Operations
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCOperationsPerSec_mseisRPCOperationsPerSec
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='mseisRPCRequests' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%7.2lf
+</property>
+<property type="string" id="legend" mode="w" >
+RPC Requests
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mseisRPCRequests_mseisRPCRequests
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Message Delivery Rate' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+messages/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+0
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<tomanycont id='graphPoints'>
+<object id='messagesCompletedDeliveryPerSecond' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Messages Completed Delivery Rate
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+messagesCompletedDeliveryPerSecond_messagesCompletedDeliveryPerSecond
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</object>
+<!-- ('', 'zport', 'dmd', 'Events', 'Win', 'Exchange') -->
+<object id='/zport/dmd/Events/Win/Exchange' module='Products.ZenEvents.EventClass' class='EventClass'>
+<tomanycont id='instances'>
+<object id='Cloudmark Server Edition_2007' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+Cloudmark Server Edition_2007
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="example" mode="w" >
+Cloudmark Server Edition cannot establish a connection to the Exchange server.
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+4
+</property>
+</object>
+<object id='MSExchangeDSAccess_2064' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeDSAccess
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="regex" mode="w" >
+All the remote DS Servers in use are not responding.
+</property>
+<property type="string" id="example" mode="w" >
+Process INETINFO.EXE (PID=1676) All the remote DS Servers in use are not responding.
+</property>
+<property type="text" id="explanation" mode="w" >
+Indicates DSAccess problems caused by incorrect Domain Name System (DNS) configuration.
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+3
+</property>
+</object>
+<object id='MSExchangeDSAccess_2069' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeDSAccess
+</property>
+<property type="int" id="sequence" mode="w" >
+1
+</property>
+<property type="string" id="example" mode="w" >
+Dsaccess could not find any global catalog servers in the enterprise.
+</property>
+<property type="text" id="explanation" mode="w" >
+Indicates DSAccess problems caused by incorrect Domain Name System (DNS) configuration.
+</property>
+<property type="text" id="resolution" mode="w" >
+Promote one or more of your domain controllers to a global catalog to allow dsaccess to function properly.
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+3
+</property>
+</object>
+<object id='MSExchangeIS_9582' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeIS
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="regex" mode="w" >
+The virtual memory necessary to run your Exchange server is fragmented in such a way that normal operation may begin to fail. It is highly recommended that you restart all Exchange services to correct this issue.
+</property>
+<property type="string" id="example" mode="w" >
+The virtual memory necessary to run your Exchange server is fragmented in such a way that normal operation may begin to fail. It is highly recommended that you restart all Exchange services to correct this issue.
+</property>
+<property type="text" id="explanation" mode="w" >
+This Warning event indicates incorrect security settings on mailbox-enabled user accounts. Multiple occurrences of this event will cause performance issues on the Exchange Server computer. Check http://support.microsoft.com/kb/883527
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+3
+</property>
+</object>
+<object id='MSExchangeIS_9646' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeIS_9646
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="regex" mode="w" >
+Mapi session "/o=My Organization/ou=DOMAIN/cn=Recipients/cn=username" exceeded the maximum of \d+ objects of type "objtMessage". For more information, click http://www.microsoft.com/contentredirect.asp.
+</property>
+<property type="string" id="example" mode="w" >
+Mapi session "/o=My Organization/ou=DOMAIN/cn=Recipients/cn=username" exceeded the maximum of 250 objects of type "objtMessage". For more information, click http://www.microsoft.com/contentredirect.asp.
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+5
+</property>
+</object>
+<object id='MSExchangeIS_9665' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeIS_9665
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="example" mode="w" >
+The memory settings for this server are not optimal for Exchange. For more information, click http://support.microsoft.com?kbid=815372
+</property>
+</object>
+<object id='MSExchangeMGMT_3' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+MSExchangeMGMT_3
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="example" mode="w" >
+The Microsoft Exchange Management service has started
+</property>
+<property visible="True" type="int" id="zEventSeverity" >
+2
+</property>
+</object>
+<object id='msexchangeis_9665' module='Products.ZenEvents.EventClassInst' class='EventClassInst'>
+<property type="string" id="eventClassKey" mode="w" >
+msexchangeis_9665
+</property>
+<property type="int" id="sequence" mode="w" >
+0
+</property>
+<property type="string" id="example" mode="w" >
+The memory settings for this server are not optimal for Exchange. For more information, click http://support.microsoft.com?kbid=815372
+</property>
+</object>
+</tomanycont>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'IpService', 'Privileged', 'serviceclasses', 'imap4-ssl') -->
+<object id='/zport/dmd/Services/IpService/Privileged/serviceclasses/imap4-ssl' module='Products.ZenModel.IpServiceClass' class='IpServiceClass'>
+<property type="string" id="name" mode="w" >
+imap4-ssl
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('imap4-ssl', 'tcp_00585', 'udp_00585')
+</property>
+<property type="text" id="description" mode="w" >
+IMAP4+SSL (use 993 instead)
+</property>
+<property type="int" id="port" mode="w" >
+585
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'IpService', 'Privileged', 'serviceclasses', 'msexch-routing') -->
+<object id='/zport/dmd/Services/IpService/Privileged/serviceclasses/msexch-routing' module='Products.ZenModel.IpServiceClass' class='IpServiceClass'>
+<property type="string" id="name" mode="w" >
+msexch-routing
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['msexch-routing', 'tcp_00691', 'udp_00691']
+</property>
+<property type="text" id="description" mode="w" >
+MS Exchange Routing
+</property>
+<property type="int" id="port" mode="w" >
+691
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'IpService', 'Privileged', 'serviceclasses', 'pop3') -->
+<object id='/zport/dmd/Services/IpService/Privileged/serviceclasses/pop3' module='Products.ZenModel.IpServiceClass' class='IpServiceClass'>
+<property type="string" id="name" mode="w" >
+pop3
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('pop3', 'tcp_00110', 'udp_00110')
+</property>
+<property type="text" id="description" mode="w" >
+Post Office Protocol - Version 3
+</property>
+<property type="int" id="port" mode="w" >
+110
+</property>
+<property type="string" id="expectRegex" mode="w" >
+\+OK
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'IpService', 'Privileged', 'serviceclasses', 'smtp') -->
+<object id='/zport/dmd/Services/IpService/Privileged/serviceclasses/smtp' module='Products.ZenModel.IpServiceClass' class='IpServiceClass'>
+<property type="string" id="name" mode="w" >
+smtp
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['smtp', 'tcp_00025', 'udp_00025']
+</property>
+<property type="text" id="description" mode="w" >
+Simple Mail Transfer
+</property>
+<property type="int" id="port" mode="w" >
+25
+</property>
+<property type="string" id="expectRegex" mode="w" >
+220
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'IISADMIN') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/IISADMIN' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+IISADMIN
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('IISADMIN',)
+</property>
+<property type="text" id="description" mode="w" >
+IIS Admin Service
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'IMAP4Svc') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/IMAP4Svc' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+IMAP4Svc
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('IMAP4Svc',)
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange IMAP4
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeES') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeES' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeES
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeES']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Event
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeIS') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeIS' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeIS
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeIS']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Information Store
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeMGMT') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeMGMT' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeMGMT
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeMGMT']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Management
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeMTA') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeMTA' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeMTA
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeMTA']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange MTA Stacks
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeSA') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeSA' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeSA
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeSA']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange System Attendant
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'MSExchangeSRS') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/MSExchangeSRS' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+MSExchangeSRS
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+['MSExchangeSRS']
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Site Replication Service
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'POP3Svc') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/POP3Svc' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+POP3Svc
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('POP3Svc',)
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange POP3
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'RESvc') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/RESvc' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+RESvc
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('RESvc',)
+</property>
+<property type="text" id="description" mode="w" >
+Microsoft Exchange Routing Engine
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'SMTPSVC') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/SMTPSVC' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+SMTPSVC
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('SMTPSVC',)
+</property>
+<property type="text" id="description" mode="w" >
+Simple Mail Transfer Protocol (SMTP)
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Services', 'WinService', 'serviceclasses', 'W3SVC') -->
+<object id='/zport/dmd/Services/WinService/serviceclasses/W3SVC' module='Products.ZenModel.WinServiceClass' class='WinServiceClass'>
+<property type="string" id="name" mode="w" >
+W3SVC
+</property>
+<property type="lines" id="serviceKeys" mode="w" >
+('W3SVC',)
+</property>
+<property type="text" id="description" mode="w" >
+World Wide Web Publishing Service
+</property>
+</object>
+</objects>

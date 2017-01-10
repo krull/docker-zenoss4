@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.zenoss.MSExchange = ZenPacks.zenoss.MSExchange
+

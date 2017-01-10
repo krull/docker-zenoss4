@@ -74,8 +74,9 @@ services:
     image: mcroth/docker-zenoss4 
     container_name: zenoss4-core
     hostname: zenoss4-core
-#    volumes:
+    volumes:
 #      - "./init_fs/usr/local/zenoss/log:/usr/local/zenoss/log:rw"
+      - "./init_fs/usr/local/zenoss/ZenPacks:/usr/local/zenoss/ZenPacks:rw"
     links:
       - zenoss4-memcached
       - zenoss4-rabbitmq

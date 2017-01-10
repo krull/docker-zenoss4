@@ -1,0 +1,15 @@
+/bin/cat /proc/cpuinfo
+processor : 0
+cpu : 7447A, altivec supported
+clock : 666.666000MHz
+revision : 0.1 (pvr 8003 0101)
+bogomips : 36.73
+timebase : 18432000
+platform : PowerMac
+model : PowerBook6,4
+machine : PowerBook6,4
+motherboard : PowerBook6,4 MacRISC3 Power Macintosh
+detected as : 287 (PowerBook G4 12")
+pmac flags : 0000001a
+L2 cache : 512K unified
+pmac-generation : NewWorld
