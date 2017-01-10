@@ -8,7 +8,7 @@ networks:
 
 services:
   zenoss4-memcached:
-    image: memcached:1.4
+    image: memcached:1.4-alpine
     container_name: zenoss4-memcached
     hostname: zenoss4-memcached
     mem_limit: 1g
@@ -36,7 +36,7 @@ services:
       - back-tier
 
   zenoss4-redis:
-    image: redis:3.0
+    image: redis:3.0-alpine
     container_name: zenoss4-redis
     hostname: zenoss4-redis
     volumes:
