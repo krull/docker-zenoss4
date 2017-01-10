@@ -1,6 +1,6 @@
 #!/bin/bash
-set -eo pipefail
-shopt -s nullglob
 
-echo "Starting the zenoss daemons"
-service zenoss start
+set -e
+
+echo "Starting the zenoss daemons..."
+service zenoss start & tail -f /usr/local/zenoss/logi/Z2.log
