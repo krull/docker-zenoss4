@@ -1,0 +1,2 @@
+ZenPacks/zenoss/Microsoft/Windows/lib/kerberos_el5/kerberos.so
+ZenPacks/zenoss/Microsoft/Windows/lib/kerberos_el6/kerberos.so

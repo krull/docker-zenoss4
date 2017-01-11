@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ZenPacks.zenoss.MySqlMonitor
+Version: 3.0.7
+Summary: MySQL Database Monitor (Core) ZenPack
+Home-page: http://wiki.zenoss.org/ZenPack:MySQL_Database_Monitor_%28Core%29
+Author: Zenoss
+Author-email: UNKNOWN
+License: GPLv2
+Description: Zenoss Zenpack for monitoring MySQL server
+Platform: UNKNOWN

@@ -1,0 +1,15 @@
+[2017-01-10 17:20:03,510] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:147 - zenjmxjava configuration:
+[2017-01-10 17:20:03,517] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:148 - {v=20, zenjmxjavaport=9988}
+[2017-01-10 17:20:03,518] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:64 - setting root logger to INFO
+[2017-01-10 17:26:38,020] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:147 - zenjmxjava configuration:
+[2017-01-10 17:26:38,023] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:148 - {v=20, zenjmxjavaport=9988}
+[2017-01-10 17:26:38,023] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:64 - setting root logger to INFO
+[2017-01-10 17:28:25,516] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:147 - zenjmxjava configuration:
+[2017-01-10 17:28:25,522] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:148 - {v=20, zenjmxjavaport=9988}
+[2017-01-10 17:28:25,523] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:64 - setting root logger to INFO
+[2017-01-10 17:31:45,744] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:147 - zenjmxjava configuration:
+[2017-01-10 17:31:45,749] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:148 - {v=20, zenjmxjavaport=9988}
+[2017-01-10 17:31:45,749] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:64 - setting root logger to INFO
+[2017-01-10 17:34:46,885] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:147 - zenjmxjava configuration:
+[2017-01-10 17:34:46,889] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:148 - {v=20, zenjmxjavaport=9988}
+[2017-01-10 17:34:46,890] [INFO ] [main] com.zenoss.zenpacks.zenjmx.ZenJmxMain:64 - setting root logger to INFO
