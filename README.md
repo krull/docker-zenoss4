@@ -4,11 +4,11 @@
 ## description
 In continuing my journey to learn Docker's Best Practices, I had the need to dockerize the Battle-tested, Zenoss 4.2.5. This time around, I knew that Zenoss4 has dependencies on other processes to work properly at 100%. So in true, docker spirit, I have segregated all the major services that comprises the Zenoss4 Stack into its own dockerized images, utilizing docker's default image library for the following:
 
-* [mariadb](https://hub.docker.com/_/mariadb/) - `mariadb` 5.5 Database based instead of `mysql` 5.5
-* [memcached](https://hub.docker.com/_/memcached/) - memcached distributed memory caching system 
-* [redis](https://hub.docker.com/_/redis/) - `redis` is an open-source, networked, in-memory, key-value data store
-* [rabbitmq](https://hub.docker.com/_/rabbitmq/) - `rabbitmq` implements the Advanced Message Queuing Protocol (AMQP)
-* [nginx](https://hub.docker.com/_/nginx/) - `nginx` reverse http proxy 
+* [memcached](https://hub.docker.com/_/memcached/), a distributed memory caching system, named `zenoss4-memcached`
+* [rabbitmq](https://hub.docker.com/_/rabbitmq/), the Advanced Message Queuing Protocol (AMQP), named `zenoss4-rabbitmq`
+* [redis](https://hub.docker.com/_/redis/), a networked, in-memory, key-value data store, named `zenoss4-redis`
+* [mariadb](https://hub.docker.com/_/mariadb/), SQL Database backwards compatible to `mysql 5.5`, named `zenoss4-mariadb` 
+* [nginx](https://hub.docker.com/_/nginx/), reverse http proxy, named `zenoss4-nginx`
 
 The main glue for all of this orchestration is really the [docker-compose.yml file](https://github.com/krull/docker-zenoss4/blob/master/docker-compose.yml) which pulls everything together. You can read more information on `docker-compose` and how to install it on your docker host at [docker's website](https://docs.docker.com/compose/).
 
@@ -59,6 +59,81 @@ You can use this image directly from [hub.docker.com](https://hub.docker.com/r/m
 docker pull mcroth/docker-zenoss4:latest
 ```
 
-##default build
+## ssl encryption
+According to [this wiki.zenoss.org entry](http://wiki.zenoss.org/Newsletter:5/Encrypt_All_the_Bits), you can proxy pass all zenoss traffic via nginx.
+
+You will need to ofcourse provide your own SSL Certificates for your own domain name that is guaranteed by a Certifying Authority (CA). My suggestion is to use [Let's Encrypt's](https://letsencrypt.org/) [SSL For Free](https://www.sslforfree.com/) if you want to just test the waters on a fully SSL enabled Zenoss Install without reverting to a self-signed SSL certificate/key pair.
+
+Here are `zenoss4-nginx`'s server blocks for `mnt.example.com` to accomodate SSL encryption:
+```
+server {
+    listen 80;
+    server_name mnt.example.com;
+
+    return 301 http://mnt.example.com$request_uri;
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name mnt.example.com;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubdomains";
+
+    ssl_certificate /etc/nginx/ssl/mnt_example_com.crt;
+    ssl_certificate_key /etc/nginx/ssl/mnt_example_com.key;
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers "EECDH+ECDSA+AESGCM EECDH+aRSA+AESGCM EECDH+ECDSA+SHA384 EECDH+ECDSA+SHA256 EECDH+aRSA+SHA384 EECDH+aRSA+SHA256 EECDH+aRSA+RC4 EECDH EDH+aRSA RC4 !aNULL !eNULL !LOW !3DES !MD5 !EXP !PSK !SRP !DSS";
+
+    location / {
+        rewrite  ^(.*)$ /VirtualHostBase/https/$host:443$1 break;
+
+        proxy_cache STATIC;
+        proxy_cache_bypass  $http_cache_control;
+        add_header X-Proxy-Cache $upstream_cache_status;
+        proxy_cache_use_stale error timeout http_500 http_502 http_503 http_504;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://zenoss4-core:8080;
+    }
+
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+}
+```
+
+Notice I have redirected all http traffic to it's https equivalent. Save it as `default.conf` in `./init_fs/etc/nginx/`, and make certain that in your `docker-compose.yml` file you will have the following `volume` entry:
+```
+  zenoss4-nginx:
+    image: nginx:alpine
+    container_name: zenoss4-nginx
+    hostname: zenoss4-nginx
+    volumes:
+      - "./init_fs/etc/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:ro"
+      - "./init_fs/etc/nginx/ssl:/etc/nginx/ssl:ro"
+    links:
+      - zenoss4-core
+    depends_on:
+      - zenoss4-core
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - back-tier
+      - front-tier
+```
+
+Take note of the ssl directory for your crts/key file pair as well as the 443/80 port mappings. Once up, `zenoss4-core` will show up at `https://mnt.example.com`. Please be aware that `zenoss4-core` will still try to load http traffic from 3rd party locations.
+
+## default build
 There is a `Makefile`, with some directives on building `docker-zenoss4`. Have a look at that file and check the options. Issuing a `make` will run the default build.
 
