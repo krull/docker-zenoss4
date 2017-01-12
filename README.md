@@ -10,6 +10,8 @@ In continuing my journey to learn Docker's Best Practices, I had the need to doc
 * [mariadb](https://hub.docker.com/_/mariadb/), SQL Database backwards compatible to `mysql 5.5`, named `zenoss4-mariadb` 
 * [nginx](https://hub.docker.com/_/nginx/), reverse http proxy, named `zenoss4-nginx`
 
+The dockerized image of zenoss v4.2.5 is aptly named `zenoss4-core`.
+
 The main glue for all of this orchestration is really the [docker-compose.yml file](https://github.com/krull/docker-zenoss4/blob/master/docker-compose.yml) which pulls everything together. You can read more information on `docker-compose` and how to install it on your docker host at [docker's website](https://docs.docker.com/compose/).
 
 The [Dockerfile](https://github.com/krull/docker-zenoss4/blob/master/Dockerfile) for the `zenoss4-core` build has directives that points to the necessary hostnames of each dockerized services mentioned above to function properly and collectively. There is a `.dockerignore` file that ignores the whole `init_fs` folder upon build time. Moreover, I have excluded some environmental variables in files called `.env` and `.env_make`. I have added sample `.smpl` files. Just rename them accordingly.
