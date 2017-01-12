@@ -1,3 +1,0 @@
-[zenoss.zenpacks]
-ZenPacks.zenoss.IISMonitor = ZenPacks.zenoss.IISMonitor
-

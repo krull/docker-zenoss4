@@ -1,3 +1,0 @@
-[zenoss.zenpacks]
-ZenPacks.zenoss.ApacheMonitor = ZenPacks.zenoss.ApacheMonitor
-

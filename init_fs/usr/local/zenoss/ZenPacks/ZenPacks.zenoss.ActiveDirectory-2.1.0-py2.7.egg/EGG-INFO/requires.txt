@@ -1,2 +1,0 @@
-ZenPacks.zenoss.WindowsMonitor
-ZenPacks.zenoss.PySamba
