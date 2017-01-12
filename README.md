@@ -62,7 +62,7 @@ docker pull mcroth/docker-zenoss4:latest
 ```
 
 ## ssl encryption
-According to [this wiki.zenoss.org entry](http://wiki.zenoss.org/Newsletter:5/Encrypt_All_the_Bits), you can proxy pass all zenoss traffic via nginx.
+According to [this wiki.zenoss.org entry](http://wiki.zenoss.org/Newsletter:5/Encrypt_All_the_Bits), you can proxy pass all zenoss traffic via NGINX, and in our case our `zenoss4-nginx` image instance.
 
 You will need to ofcourse provide your own SSL Certificates for your own domain name that is guaranteed by a Certifying Authority (CA). My suggestion is to use [Let's Encrypt's](https://letsencrypt.org/) [SSL For Free](https://www.sslforfree.com/) if you want to just test the waters on a fully SSL enabled Zenoss Install without reverting to a self-signed SSL certificate/key pair.
 
