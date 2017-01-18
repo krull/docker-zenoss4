@@ -136,6 +136,16 @@ Notice I have redirected all http traffic to it's https equivalent. Save it as `
 
 Take note of the ssl directory for your crts/key file pair as well as the 443/80 port mappings. Once up, `zenoss4-core` will show up at `https://mnt.example.com`. Please be aware that `zenoss4-core` will still try to load http traffic from 3rd party locations.
 
+## sms gateway integration
+With the help of [SMSeagle's Zenoss SMS Integration page](https://www.smseagle.eu/integration-plugins/zenoss-sms-integration/), I have managed to integrate successfully the following SMS gateways in Zenoss:
+
+* SMSEagle
+* Plivo
+* Twilio
+* BulkSMS
+
+Just follow the instructions on the page above, and browse through the sms scripts located [here](https://github.com/krull/docker-misc/tree/master/init_fs/usr/local/zenoss/bin), so far only `zenoss_plvsms` is published. 
+
 ## default build
 There is a `Makefile`, with some directives on building `docker-zenoss4`. Have a look at that file and check the options. Issuing a `make` will run the default build.
 
